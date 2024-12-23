@@ -412,5 +412,12 @@
 
 <script src="./assets/js/script.js"></script>
 
+<script>
+  (async () => {
+    const { injectSpeedInsights } = await import('https://cdn.jsdelivr.net/npm/@vercel/speed-insights');
+    injectSpeedInsights();
+  })();
+</script>
+
 </body>
 </html>

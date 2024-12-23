@@ -56,10 +56,6 @@ $(document).ready(function () {
 
 });
 
-import { injectSpeedInsights } from '@vercel/speed-insights';
-
-injectSpeedInsights();
-
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {

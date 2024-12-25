@@ -461,7 +461,7 @@ header .navbar ul li a:hover {
 /* skills section starts */
 .skills {
   min-height: 90vh;
-  background: linear-gradient(to bottom, #000031, #00002c);
+  background:rgb(50, 1, 49);
 }
 .skills h2 {
   color: #fff;
@@ -518,8 +518,11 @@ header .navbar ul li a:hover {
     padding: 0;
     margin: 0;
   }
+  .skills h2{
+    font-size: 2rem;
+  }
   .skills .container .row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin: 1rem;
     padding: 2rem 0.2rem 2rem 0.2rem;
     gap: 1rem;
@@ -532,11 +535,143 @@ header .navbar ul li a:hover {
 /* skills media queries ends*/
 /* skills section ends */
 
+
 /* projects section starts */
-.projects {
-  background: #e5ecfb;
-  min-height: 80vh;
+.project{
+  background: #000000;
 }
+.project h2 {
+  color: #fff;
+}
+.project .heading span {
+  color: rgb(255, 230, 0);
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card .project-info {
+  background: rgba(45, 2, 51, 0.995); /* Fixed background for title and description */
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  position: relative; /* Ensures the position is independent of hover effects */
+  z-index: 1;
+}
+
+.project-card .project-info h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #ffffff; /* Fixed title color */
+}
+
+.project-card .project-info p {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: #ffffff; /* Fixed description color */
+}
+
+.project-card .project-info .btn {
+  padding: 8px 16px;
+  background: #980090;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.project-card .project-info .btn:hover {
+  background: #ff00cc;
+}
+
+.project-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgb(255, 0, 255);
+  background-color: #1b0447;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Disable hover effects for .project-info */
+.project-card:hover .project-info {
+  transform: none;
+  color: inherit;
+  background: inherit;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1080px) {
+  .project h2 {
+    font-size: 1.5rem;
+  }
+  .project-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-area: span 4;
+  }
+  .project-container {
+    gap: 10px;
+  }
+  .project-container .project-card {
+    border-radius: 5px;
+  }
+  .project-card .project-info h3 {
+    font-size: 0.8rem;
+  }
+  .project-card .project-info p {
+    font: 0.7rem;
+  }
+  .project-card .project-info .btn {
+    padding: 2px 4px;
+    font-size: 0.6rem;
+  }
+}
+
+
+.morebtn {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px; /* Add space below the button */
+}
+
+.morebtn .btn {
+  padding: 10px 30px;
+  background-color: #361bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.morebtn .btn:hover {
+  background-color: #007bff;
+}
+
 
 
 
@@ -674,6 +809,9 @@ header .navbar ul li a:hover {
 @media screen and (max-width: 600px) {
   .experience {
     min-height: 80vh;
+  }
+  .experience .h2{
+    font-size: 1.5rem;
   }
   .experience .timeline {
     margin-top: 2rem;
@@ -820,127 +958,142 @@ header .navbar ul li a:hover {
 /* education section ends */
 
 
-
-
-
-/* Awards section starts */
+/* awards section starts */
+/* Awards Section */
 .awards {
-  /* background: #010124; */
-  background: linear-gradient(to bottom, #000031, #00002c);
+  background: rgb(50, 1, 49);
+  padding: 40px 20px;
+  overflow: hidden;
 }
 .awards h2 {
+  text-align: center;
   color: #fff;
-  padding: 1rem;
-}
-.awards .heading span {
-  color: rgb(255, 145, 2);
-}
-.awards .box-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 2rem;
-}
-.awards .box-container .box {
-  flex: 1 1 30rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-  height: 30rem;
-}
-.awards .box-container .box img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-.awards .box-container .box .content {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 85%;
-  left: 0;
-  background: rgba(255, 255, 255, 0.9);
-  display: flex;
-  flex-direction: column;
-}
-.awards .box-container .box .content .tag {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 4.5rem;
-  width: 100%;
-  padding-left: 1rem;
-  background: #ffd900;
-}
-.awards .box-container .box .content .tag h3 {
   font-size: 2rem;
 }
-.awards .box-container .box:hover .content {
-  top: 25%;
+.awards h3 {
+  text-align: center;
+  color: #fff;
 }
-.awards .desc {
-  margin: 2rem;
+.awards p{
+  color: #fff;
+}
+.awards .heading span {
+  color: rgb(255, 230, 0);
+}
+
+/* Slider container */
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.slider-track {
+  display: flex;
+  animation: slide 20s linear infinite;
+  gap: 25px; /* Adds spacing between award cards */
+}
+
+/* Individual Award Card */
+.award-container {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 300px;
+  height: auto;
+  background: #6f0664;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
 }
-.awards .desc p {
-  font-size: 1.5rem;
+
+.award-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 18px rgb(255, 108, 243);
+  background-color: #030645;
 }
-.awards .desc .btns {
-  display: flex;
-  justify-content: space-between;
+.slider:hover .slider-track {
+  animation-play-state: paused;
+}
+
+.image-box {
   width: 100%;
-  margin-top: 2rem;
+  height: auto;
+  overflow: hidden;
+  border-radius: 0.8px;
 }
-.awards .desc .btns .btn {
-  line-height: 0;
-  display: inline;
-  padding: 1.5rem 2.5rem;
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
-  color: #fff;
-  background: rgb(12, 12, 12);
-  margin-right: 2rem;
+
+.image-box img {
+  width: 300px;
+  height: 225px;
+  object-fit: cover;
 }
-.awards .desc .btns .btn:hover {
-  background: #310ae0f5;
-}
-.awards .viewall {
-  display: flex;
-  justify-content: center;
-}
-.awards .viewall .btn {
-  position: relative;
-  line-height: 0;
-  padding: 1.6rem 3rem;
-  border-radius: 0.5em;
-  transition: 0.5s;
-  color: rgb(255, 255, 255);
-  font-weight: 700;
-  border: 2px solid #fff;
-  box-shadow: 0px 5px 10px rgba(65, 84, 241, 0.4);
+
+.text-box {
+  padding: 15px;
   text-align: center;
 }
-.awards .viewall .btn span {
-  font-weight: 600;
-  font-size: 1.7rem;
-  font-family: "Nunito", sans-serif;
-}
-.awards .viewall .btn i {
-  margin-left: 0.3rem;
+
+.text-box h3 {
   font-size: 1.5rem;
-  transition: 0.3s;
+  color: #fff;
+  margin-bottom: 10px;
 }
-.awards .viewall .btn:hover {
-  background: #fff;
-  color: #000;
+
+/* Animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
-.awards .viewall .btn:hover i {
-  transform: translateX(5px);
+
+
+/* For small devices (phones) */
+@media (max-width: 1024px) {
+  .slider-track {
+    gap: 15px;
+  }
+  .award-container {
+    width: 100%;
+    max-width: 200px;
+  }
+  .image-box {
+    width: fit-content
+  }
+  .text-box h3 {
+    font-size: 1.2rem;
+  }
+  .text-box p {
+    font-size: 1rem;
+  }
 }
+
+/* For medium devices (tablets) */
+@media (max-width: 1024px) {
+  .slider-track {
+    gap: 15px;
+  }
+  .award-container {
+    width: 100%;
+    max-width: 200px;
+  }
+  .image-box{
+    width: fit-content;
+  }
+  .text-box h3 {
+    font-size: 0.9rem;
+  }
+  .text-box p {
+    font-size: 0.8rem;
+  }
+}
+
+
 /* awards section ends */
 
 

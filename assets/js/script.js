@@ -103,63 +103,31 @@ function showSkills(skills) {
     });
     skillsContainer.innerHTML = skillHTML;
 }
-
-function showProjects(projects) {
-    let projectsContainer = document.querySelector("#work .box-container");
-    let projectHTML = "";
-    projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
-        projectHTML += `
-        <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-          <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>`
-    });
-    projectsContainer.innerHTML = projectHTML;
-
-    // <!-- tilt js effect starts -->
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
-    });
-    // <!-- tilt js effect ends -->
-
-    /* ===== SCROLL REVEAL ANIMATION ===== */
-    const srtop = ScrollReveal({
-        origin: 'top',
-        distance: '80px',
-        duration: 1000,
-        reset: true
-    });
-
-    /* SCROLL PROJECTS */
-    srtop.reveal('.work .box', { interval: 200 });
-
-}
-
+//<!--skills call-->
 fetchData().then(data => {
     showSkills(data);
 });
 
-fetchData("projects").then(data => {
-    showProjects(data);
-});
+//Awards section................
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector(".slider-track");
+    const items = Array.from(track.children);
+  
+    // Clone items to ensure infinite loop
+    items.forEach((item) => {
+      const clone = item.cloneNode(true);
+      track.appendChild(clone);
+    });
+  });
+  
+
 
 // <!-- tilt js effect starts -->
 VanillaTilt.init(document.querySelectorAll(".tilt"), {
     max: 15,
 });
 // <!-- tilt js effect ends -->
-
+  
 
 // pre loader start
 // function loader() {
@@ -190,17 +158,6 @@ document.onkeydown = function (e) {
     }
 }
 
-// Start of Tawk.to Live Chat
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-(function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/60df10bf7f4b000ac03ab6a8/1f9jlirg6';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-})();
-// End of Tawk.to Live Chat
 
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
@@ -220,9 +177,8 @@ srtop.reveal('.home .image', { delay: 400 });
 srtop.reveal('.home .linkedin', { interval: 600 });
 srtop.reveal('.home .github', { interval: 800 });
 srtop.reveal('.home .twitter', { interval: 1000 });
-srtop.reveal('.home .telegram', { interval: 600 });
+srtop.reveal('.home .facebook', { interval: 600 });
 srtop.reveal('.home .instagram', { interval: 600 });
-srtop.reveal('.home .dev', { interval: 600 });
 
 /* SCROLL ABOUT */
 srtop.reveal('.about .content h3', { delay: 200 });
@@ -236,15 +192,24 @@ srtop.reveal('.about .content .resumebtn', { delay: 200 });
 srtop.reveal('.skills .container', { interval: 200 });
 srtop.reveal('.skills .container .bar', { delay: 400 });
 
-/* SCROLL EDUCATION */
-srtop.reveal('.education .box', { interval: 200 });
-
 /* SCROLL PROJECTS */
-srtop.reveal('.work .box', { interval: 200 });
+srtop.reveal('.project-container', { delay: 200 });
+srtop.reveal('.project-container .project-card', { delay: 200 });
+srtop.reveal('.project-container h3', { delay: 200 });
+srtop.reveal('.project-container p', { delay: 200 });
+srtop.reveal('.project-container a', { delay: 200 });
+srtop.reveal('.project-container .btn', { delay: 300 });
+srtop.reveal('.project-container .box-container', { delay: 400 });
 
 /* SCROLL EXPERIENCE */
 srtop.reveal('.experience .timeline', { delay: 400 });
-srtop.reveal('.experience .timeline .container', { interval: 400 });
+srtop.reveal('.experience .timeline .container', { interval: 200 });
+
+/* SCROLL EDUCATION */
+srtop.reveal('.education .box', { interval: 200 });
+
+/* SCROLL AWARDS */
+srtop.reveal('.awards .box', { delay: 400 });
 
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });

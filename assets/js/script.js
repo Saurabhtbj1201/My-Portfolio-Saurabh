@@ -209,7 +209,7 @@ srtop.reveal('.experience .timeline .container', { interval: 200 });
 srtop.reveal('.education .box', { interval: 200 });
 
 /* SCROLL AWARDS */
-srtop.reveal('.awards .box', { delay: 400 });
+srtop.reveal('.award-container', { delay: 400 });
 
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });

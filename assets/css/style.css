@@ -522,7 +522,7 @@ header .navbar ul li a:hover {
     font-size: 2rem;
   }
   .skills .container .row {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin: 1rem;
     padding: 2rem 0.2rem 2rem 0.2rem;
     gap: 1rem;

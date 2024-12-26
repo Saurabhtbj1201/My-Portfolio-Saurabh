@@ -1047,7 +1047,7 @@ header .navbar ul li a:hover {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-150%);
+    transform: translateX(-500%);
   }
 }
 

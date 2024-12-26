@@ -1047,18 +1047,15 @@ header .navbar ul li a:hover {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-150%);
   }
 }
 
 
 /* For small devices (phones) */
 @media (max-width: 1024px) {
-  .award.h1{
-     font-size:1.5rem;
-  }
-  .award.h2{
-     font-size:1.5rem;
+  .award .h2 {
+     font-size: 1.5rem;
   }
   .slider-track {
     gap: 15px;
@@ -1098,9 +1095,7 @@ header .navbar ul li a:hover {
   }
 }
 
-
 /* awards section ends */
-
 
 
 

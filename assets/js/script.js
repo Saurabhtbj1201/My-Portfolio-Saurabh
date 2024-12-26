@@ -208,8 +208,7 @@ srtop.reveal('.experience .timeline .container', { interval: 200 });
 /* SCROLL EDUCATION */
 srtop.reveal('.education .box', { interval: 200 });
 
-/* SCROLL AWARDS */
-srtop.reveal('.award-container', { delay: 400 });
+/* SCROLL AWARDS *
 
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });

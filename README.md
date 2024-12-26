@@ -23,7 +23,7 @@
             <li>Highlights my technical competencies.</li>
         </ul>
         <p><span class="status">Status: Completed</span></p>
-        <h3>4. Projects <span class="pending">(Remaining Work)</span></h3>
+        <h3>4. Projects <span class="Completed"></span></h3>
         <ul>
             <li>Create <strong>responsive image containers</strong> listing projects.</li>
             <li>Implement <strong>transition effects</strong> on hover to display project descriptions (JavaScript).</li>
@@ -35,9 +35,7 @@
             </li>
             <li>Apply CSS for a visually appealing layout with a white background.</li>
         </ul>
-        <p><span class="pending">Status: Pending Completion</span></p>
-        Demo screenshot of 'Projects' Section:📌📌
-        <br> ![Note This is Demo image:](https://github.com/user-attachments/assets/749a17e7-1190-4f36-974f-4ef7389a3874)
+        <p><span class="pending">Status: Completed</span></p>
     .
         <h3>5. Experience</h3>
         <ul>
@@ -49,15 +47,13 @@
             <li>Details about my educational background, including my Bachelor's degree.</li>
         </ul>
         <p><span class="status">Status: Completed</span></p>
-        <h3>7. Awards & Achievements <span class="pending">(Remaining Work)</span></h3>
+        <h3>7. Awards & Achievements <span class="Completed"></span></h3>
         <ul>
             <li>Create <strong>rectangular containers</strong> for images and descriptions placed side by side.</li>
             <li>Implement <strong>transition effects</strong> on hover to reveal award descriptions (JavaScript).</li>
             <li>Apply CSS styling with a <strong>dark background</strong> for an elegant appearance.</li>
         </ul>
-        <p><span class="pending">Status: Pending Completion</span></p>
-        Demo screenshot of 'Awards & Achievements' Section:📌📌
-        <br> ![This is demo image](https://github.com/user-attachments/assets/c76f8d18-66d0-4b2e-86c6-98d430743425)
+        <p><span class="pending">Status: Completed</span></p>
     .
         <h3>8. Contact</h3>
         <ul>

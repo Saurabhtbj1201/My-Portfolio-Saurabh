@@ -48,8 +48,6 @@ $("#contact-form").off("submit").submit();
 
 
 
-});
-
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {

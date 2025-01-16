@@ -181,17 +181,12 @@ srtop.reveal('.about .content .resumebtn', { delay: 200 });
 
 
 /* SCROLL SKILLS */
-srtop.reveal('.skills .container', { interval: 200 });
-srtop.reveal('.skills .container .bar', { delay: 400 });
+srtop.reveal('.skills .container', { interval: 100 });
+srtop.reveal('.skills .container .bar', { delay: 100 });
 
 /* SCROLL PROJECTS */
-srtop.reveal('.project-container', { delay: 200 });
-srtop.reveal('.project-container .project-card', { delay: 200 });
-srtop.reveal('.project-container h3', { delay: 200 });
-srtop.reveal('.project-container p', { delay: 200 });
-srtop.reveal('.project-container a', { delay: 200 });
-srtop.reveal('.project-container .btn', { delay: 300 });
-srtop.reveal('.project-container .box-container', { delay: 400 });
+srtop.reveal('.projects .container', { delay: 100 });
+srtop.reveal('.projects .container .box', { delay: 100 });
 
 /* SCROLL EXPERIENCE */
 srtop.reveal('.experience .timeline', { delay: 400 });

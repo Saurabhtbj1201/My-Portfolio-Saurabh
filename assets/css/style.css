@@ -554,7 +554,7 @@ header .navbar ul li a:hover {
 /* For even smaller devices like phones in portrait mode */
 @media screen and (max-width: 400px) {
   .skills .container .row {
-    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-columns: repeat(2, 1fr); /* double column layout */
     gap: 0.8rem; /* Adjust gap */
   }
 

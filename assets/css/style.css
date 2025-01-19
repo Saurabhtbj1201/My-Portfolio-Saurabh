@@ -516,22 +516,55 @@ header .navbar ul li a:hover {
 }
 
 /* skills media queries starts*/
+
+/*  skills media queries starts */
 @media screen and (max-width: 600px) {
   .skills .container {
-    padding: 0;
-    margin: 0;
-    margin-top: 5px;
-    width: 100%;
-    size-adjust: auto;
+    padding: 1rem; /* Add some padding */
+    margin: 0 auto; /* Center the container */
+    width: 100%; /* Ensure full width */
   }
-  .skills h2{
-    font-size: 2rem;
-  }
+
   .skills .container .row {
-    grid-template-columns: repeat(3, 1fr);
-    margin: 1rem;
-    padding: 1rem 0.2rem 1rem 0.2rem;
-    gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr); /* Adjust the grid to 2 columns for better fit */
+    gap: 1rem; /* Increase gap for readability */
+    padding: 0.5rem; /* Add padding inside the row */
+  }
+
+  .skills .container .bar {
+    padding: 0.5rem; /* Reduce padding for smaller screens */
+    box-shadow: 0 3px 8px rgb(255, 87, 247); /* Slightly lighter shadow */
+  }
+
+  .skills h2 {
+    font-size: 1.8rem; /* Reduce heading size */
+    text-align: center; /* Center align the heading */
+  }
+
+  .skills .container .bar .info {
+    gap: 0.5rem; /* Reduce gap between icon and text */
+  }
+
+  .skills .container .bar .info span {
+    font-size: 1.5rem; /* Adjust font size */
+    text-align: center; /* Center align text */
+  }
+}
+
+/* For even smaller devices like phones in portrait mode */
+@media screen and (max-width: 400px) {
+  .skills .container .row {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 0.8rem; /* Adjust gap */
+  }
+
+  .skills h2 {
+    font-size: 1.5rem; /* Smaller heading */
+    margin-bottom: 1rem; /* Add some spacing */
+  }
+
+  .skills .container .bar .info span {
+    font-size: 1.3rem; /* Slightly smaller font size for text */
   }
 }
 /* skills media queries ends*/
@@ -539,14 +572,20 @@ header .navbar ul li a:hover {
 
 
 /* projects section starts */
-.project{
+.project {
   background: #000000;
+  animation: fadeIn 1s ease-in-out; /* Fade-in effect for the section */
 }
+
 .project h2 {
   color: #fff;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out; /* Heading animation */
 }
+
 .project .heading span {
   color: rgb(255, 230, 0);
+  animation: fadeIn 1s ease-in-out;
 }
 
 .project-container {
@@ -562,37 +601,38 @@ header .navbar ul li a:hover {
   border-radius: 10px;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: scaleUp 0.8s ease; /* Add scale-up animation */
 }
 
 .project-card img {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .project-card .project-info {
-  background: rgba(45, 2, 51, 0.995); /* Fixed background for title and description */
+  background: rgba(45, 2, 51, 0.995);
   padding: 15px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  position: relative; /* Ensures the position is independent of hover effects */
+  position: relative;
   z-index: 1;
 }
 
 .project-card .project-info h3 {
   margin: 0 0 10px;
   font-size: 1.2rem;
-  color: #ffffff; /* Fixed title color */
+  color: #ffffff;
 }
 
 .project-card .project-info p {
   margin: 0 0 10px;
   font-size: 0.9rem;
-  color: #ffffff; /* Fixed description color */
+  color: #ffffff;
 }
 
 .project-card .project-info .btn {
@@ -602,28 +642,40 @@ header .navbar ul li a:hover {
   border-radius: 50px;
   text-decoration: none;
   font-size: 1rem;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .project-card .project-info .btn:hover {
   background: #ff00cc;
+  transform: scale(1.1); /* Scale up on hover */
 }
 
 .project-card:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 12px rgb(255, 0, 255);
+  transform: translateY(-5px); /* Subtle upward movement */
+  box-shadow: 0 10px 15px rgba(255, 0, 255, 0.7);
   background-color: #1b0447;
 }
 
 .project-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Slight zoom-in effect */
+  filter: brightness(1.2); /* Brighten the image */
 }
 
-/* Disable hover effects for .project-info */
-.project-card:hover .project-info {
-  transform: none;
-  color: inherit;
-  background: inherit;
+/* Button animations */
+.morebtn .btn {
+  padding: 10px 30px;
+  background-color: #361bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.morebtn .btn:hover {
+  background-color: #007bff;
+  transform: scale(1.1); /* Scale-up effect on hover */
 }
 
 /* Responsive adjustments */
@@ -633,49 +685,27 @@ header .navbar ul li a:hover {
   }
   .project-container {
     grid-template-columns: repeat(2, 1fr);
-    grid-area: span 4;
-  }
-  .project-container {
     gap: 10px;
   }
-  .project-container .project-card {
+  .project-card {
     border-radius: 5px;
-  }
-  .project-card .project-info h3 {
-    font-size: 0.8rem;
-  }
-  .project-card .project-info p {
-    display: none;
-  }
-  .project-card .project-info .btn {
-    padding: 2px 4px;
-    font-size: 0.6rem;
+    animation: scaleUp 0.8s ease; /* Retain scale-up animation */
   }
 }
 
-
-.morebtn {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 40px; /* Add space below the button */
+@media (max-width: 600px) {
+  .project-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 15px;
+  }
+  .project h2 {
+    font-size: 1.2rem;
+  }
+  .morebtn .btn {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+  }
 }
-
-.morebtn .btn {
-  padding: 10px 30px;
-  background-color: #361bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-
-.morebtn .btn:hover {
-  background-color: #007bff;
-}
-
-
-
 
 /* experience section starts */
 .experience .timeline {

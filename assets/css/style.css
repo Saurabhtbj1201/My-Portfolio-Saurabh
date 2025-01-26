@@ -744,6 +744,12 @@ header .navbar ul li a:hover {
 }
 
 /* experience section starts */
+
+
+/* experience section starts */
+.experience {
+  background: #fff8f0;
+}
 .experience .timeline {
   position: relative;
   max-width: 1200px;
@@ -825,11 +831,20 @@ header .navbar ul li a:hover {
   border-radius: 6px;
 }
 .experience .content .tag {
-  font-size: 1.3rem;
+  background: #7c4400;
+  color: #fff;
+  font-size: 1.5rem;
   padding-top: 1.5rem;
   padding-left: 1.5rem;
 }
-.experience .content .desc {
+.experience .content .tag span {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.6rem;
+  padding-left: 1.5rem;
+}
+.experience .content .desc { 
+  background: ffba67; 
   margin-left: 1.5rem;
   padding-bottom: 1rem;
 }
@@ -839,6 +854,8 @@ header .navbar ul li a:hover {
 }
 .experience .content .desc p {
   font-size: 1.2rem;
+  color: #fff;
+  size: 1.2px;
 }
 /* view all button */
 .morebtn {

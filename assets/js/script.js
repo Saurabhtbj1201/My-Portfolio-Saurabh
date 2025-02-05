@@ -200,3 +200,12 @@ srtop.reveal('.education .box', { interval: 200 });
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });
+
+
+// Prevent copying without credit
+document.addEventListener("copy", (event) => {
+    const selectedData = window.getSelection().toString();
+    const customMessage = `Sorry! 🫵You can't copy any content from my personal Portfolio 😎😀😎\n[CopyRight © Saurabh Kumar] Thank you!🤣\nFollow me on Linkedin👇 \nhttps://www.linkedin.com/in/saurabhtbj1201/`;
+    event.clipboardData.setData("text/plain", customMessage);
+    event.preventDefault();
+});

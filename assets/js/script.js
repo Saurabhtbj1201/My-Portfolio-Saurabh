@@ -100,6 +100,85 @@ fetchData().then(data => {
     showSkills(data);
 });
 
+
+
+// <!--Article section -->
+const articleContainer = document.querySelector(".article-container");
+const dots = document.querySelectorAll(".dot");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let isDragging = false;
+let startX, scrollLeft;
+let articleWidth = articleContainer.children[0].offsetWidth + 20; // Article width + gap
+let currentIndex = 0;
+
+// Move to a specific slide
+function moveSlide(index) {
+  currentIndex = index;
+  articleContainer.scrollLeft = index * articleWidth;
+  updateDots();
+}
+
+// Update active dot
+function updateDots() {
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentIndex);
+  });
+}
+
+// Arrow button navigation
+prevBtn.addEventListener("click", () => {
+  if (currentIndex > 0) {
+    moveSlide(currentIndex - 1);
+  }
+});
+
+nextBtn.addEventListener("click", () => {
+  if (currentIndex < dots.length - 1) {
+    moveSlide(currentIndex + 1);
+  }
+});
+
+// Mouse drag scrolling
+articleContainer.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.pageX - articleContainer.offsetLeft;
+  scrollLeft = articleContainer.scrollLeft;
+});
+
+articleContainer.addEventListener("mouseleave", () => isDragging = false);
+articleContainer.addEventListener("mouseup", () => isDragging = false);
+articleContainer.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  const x = e.pageX - articleContainer.offsetLeft;
+  const walk = (x - startX) * 2; // Drag speed
+  articleContainer.scrollLeft = scrollLeft - walk;
+});
+
+// Click event for dots
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    moveSlide(index);
+  });
+});
+
+// Sync dots with scroll event
+articleContainer.addEventListener("scroll", () => {
+  let newIndex = Math.round(articleContainer.scrollLeft / articleWidth);
+  if (newIndex !== currentIndex) {
+    currentIndex = newIndex;
+    updateDots();
+  }
+});
+
+// Initialize the first dot as active
+updateDots();
+
+
+
+
 //Awards section................
 document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".slider-track");

@@ -497,10 +497,10 @@ header .navbar ul li a:hover {
 /* skills section starts */
 .skills {
   min-height: 90vh;
-  background:rgb(50, 1, 49);
+  background:rgb(56, 0, 51);
 }
 .skills h2 {
-  color: #fff;
+  color: #ffffff;
 }
 .skills .heading span {
   color: rgb(255, 230, 0);
@@ -1043,12 +1043,290 @@ header .navbar ul li a:hover {
 /* education section ends */
 
 
+/* Article Section Starts */
+.article {
+  background: rgb(50, 1, 49);
+  text-align: center;
+  padding: 80px 20px; /* Increased padding for better spacing */
+}
+
+.article h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px; /* Increased gap from title */
+}
+
+.article .heading span {
+  color: rgb(255, 230, 0);
+}
+
+/* Article Slider */
+.article-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Article Container */
+.article-container {
+  display: flex;
+  gap: 20px; /* Space between articles */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 90%;
+  padding: 20px 0; /* Increased top padding */
+}
+
+.article-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Article Box */
+.article-box {
+  min-width: calc(100% / 3 - 20px);
+  max-width: 400px;
+  flex-shrink: 0;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+.article-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.article-box img:hover {
+  transform: scale(1.05);
+}
+
+/* Fixing Text Visibility */
+.article-box h3 {
+  margin: 15px 0;
+  font-size: 22px;
+  color: #000 !important; /* Force solid black */
+  font-weight: bold;
+  background: transparent !important; /* Ensure no unwanted background */
+}
+
+.article-box p {
+  color: #000 !important; /* Force solid black */
+  font-size: 16px;
+  line-height: 1.5;
+  background: transparent !important; /* Prevent blending */
+}
+
+/* Social Icons */
+/* Social Icons Container */
+.article-box .social-icons {
+  margin: 10px 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Social Media Icons */
+.article-box .social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #f1f1f1; /* Light background */
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Default Icon Styling */
+.article-box .social-icons a i {
+  font-size: 20px;
+  color: #333;
+  transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+/* Hover Effects */
+.article-box .social-icons a:hover {
+  transform: scale(1.1);
+}
+
+/* Individual Hover Colors */
+.article-box .social-icons a:nth-child(1):hover {
+  background: #f57d00; /* Blogger Color */
+}
+.article-box .social-icons a:nth-child(1):hover i {
+  color: #fff;
+}
+
+.article-box .social-icons a:nth-child(2):hover {
+  background: #0077b5; /* LinkedIn Color */
+}
+.article-box .social-icons a:nth-child(2):hover i {
+  color: #fff;
+}
+
+.article-box .social-icons a:nth-child(3):hover {
+  background: #000000; /* Medium Color */
+}
+.article-box .social-icons a:nth-child(3):hover i {
+  color: #fff;
+}
+
+.article-box .social-icons a:nth-child(4):hover {
+  background: #ff0000; /* Medium Color */
+}
+.article-box .social-icons a:nth-child(4):hover i {
+  color: #fff;
+}
+
+
+/* Read More Button */ 
+.read-more {
+  font-size: 11px;
+  display: inline-flex; /* Use inline-flex for better alignment */
+  align-items: center; /* Align text and icon */
+  gap: 5px; /* Add space between text and icon */
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #01559d;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background 0.3s ease-in-out;
+}
+
+.read-more:hover {
+  background: #0013bd;
+}
+/* Move the arrow on hover */
+.read-more i {
+  transition: transform 0.3s ease-in-out; /* Ensure smooth animation */
+}
+
+.read-more:hover i {
+  transform: translateX(5px); /* Move the arrow 5px to the right */
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 12px 18px;
+  cursor: pointer;
+  border-radius: 50px;
+  z-index: 100;
+  transition: background 0.3s ease-in-out;
+}
+
+.nav-arrow:hover {
+  background: #ffffff;
+  color: #000;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+/* Slider Dots */
+.slider-dots {
+  margin-top: 20px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.dot.active {
+  background: #1504ff;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+  background: #0073b1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .article-container {
+    width: 90%;
+  }
+  .article h2 {
+    font-size: 2.5rem;
+  }
+  .article-box {
+    min-width: calc(100% / 2 - 20px);
+  }
+  .nav-arrow {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+  .left-arrow {
+    left: 0.1px;
+  }
+  .right-arrow {
+    right: 0.1px;
+  }
+}
+
+@media (max-width: 768px) {
+  .article h2 {
+    font-size: 2.5rem;
+  }
+  .article-container {
+    width: 90%;
+  }
+  .article-box {
+    min-width: 100%;
+  }
+  .nav-arrow {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+  .left-arrow {
+    left: 0.1px;
+  }
+  .right-arrow {
+    right: 0.1px;
+  }
+}
+
+
+/* Article Section Ends */
+
 /* awards section starts */
 /* Awards Section */
 .awards {
   background: rgb(50, 1, 49);
   padding: 40px 20px;
   overflow: hidden;
+  height:fit-content;
 }
 .awards h2 {
   text-align: center;
@@ -1181,6 +1459,7 @@ header .navbar ul li a:hover {
 }
 
 /* awards section ends */
+
 
 
 

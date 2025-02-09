@@ -1053,7 +1053,7 @@ header .navbar ul li a:hover {
 .article h2 {
   text-align: center;
   color: #fff;
-  margin-bottom: 30px; /* Increased gap from title */
+  margin-bottom: 20px; /* Increased gap from title */
 }
 
 .article .heading span {
@@ -1113,7 +1113,7 @@ header .navbar ul li a:hover {
 /* Fixing Text Visibility */
 .article-box h3 {
   margin: 15px 0;
-  font-size: 22px;
+  font-size: 20px;
   color: #000 !important; /* Force solid black */
   font-weight: bold;
   background: transparent !important; /* Ensure no unwanted background */
@@ -1121,7 +1121,7 @@ header .navbar ul li a:hover {
 
 .article-box p {
   color: #000 !important; /* Force solid black */
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
   background: transparent !important; /* Prevent blending */
 }

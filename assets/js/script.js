@@ -101,96 +101,159 @@ fetchData().then(data => {
 });
 
 
-
 // <!--Article section -->
 const articleContainer = document.querySelector(".article-container");
-const dots = document.querySelectorAll(".dot");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
+const articleDots = document.querySelectorAll(".dot");
+const articlePrevBtn = document.getElementById("prevBtn");
+const articleNextBtn = document.getElementById("nextBtn");
 
-let isDragging = false;
-let startX, scrollLeft;
+let articleIsDragging = false;
+let articleStartX, articleScrollLeft;
 let articleWidth = articleContainer.children[0].offsetWidth + 20; // Article width + gap
-let currentIndex = 0;
+let articleCurrentIndex = 0;
 
 // Move to a specific slide
-function moveSlide(index) {
-  currentIndex = index;
+function moveArticleSlide(index) {
+  articleCurrentIndex = index;
   articleContainer.scrollLeft = index * articleWidth;
-  updateDots();
+  updateArticleDots();
 }
 
 // Update active dot
-function updateDots() {
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === currentIndex);
+function updateArticleDots() {
+  articleDots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === articleCurrentIndex);
   });
 }
 
 // Arrow button navigation
-prevBtn.addEventListener("click", () => {
-  if (currentIndex > 0) {
-    moveSlide(currentIndex - 1);
+articlePrevBtn.addEventListener("click", () => {
+  if (articleCurrentIndex > 0) {
+      moveArticleSlide(articleCurrentIndex - 1);
   }
 });
 
-nextBtn.addEventListener("click", () => {
-  if (currentIndex < dots.length - 1) {
-    moveSlide(currentIndex + 1);
+articleNextBtn.addEventListener("click", () => {
+  if (articleCurrentIndex < articleDots.length - 1) {
+      moveArticleSlide(articleCurrentIndex + 1);
   }
 });
 
 // Mouse drag scrolling
 articleContainer.addEventListener("mousedown", (e) => {
-  isDragging = true;
-  startX = e.pageX - articleContainer.offsetLeft;
-  scrollLeft = articleContainer.scrollLeft;
+  articleIsDragging = true;
+  articleStartX = e.pageX - articleContainer.offsetLeft;
+  articleScrollLeft = articleContainer.scrollLeft;
 });
 
-articleContainer.addEventListener("mouseleave", () => isDragging = false);
-articleContainer.addEventListener("mouseup", () => isDragging = false);
+articleContainer.addEventListener("mouseleave", () => articleIsDragging = false);
+articleContainer.addEventListener("mouseup", () => articleIsDragging = false);
 articleContainer.addEventListener("mousemove", (e) => {
-  if (!isDragging) return;
+  if (!articleIsDragging) return;
   e.preventDefault();
   const x = e.pageX - articleContainer.offsetLeft;
-  const walk = (x - startX) * 2; // Drag speed
-  articleContainer.scrollLeft = scrollLeft - walk;
+  const walk = (x - articleStartX) * 2; // Drag speed
+  articleContainer.scrollLeft = articleScrollLeft - walk;
 });
 
 // Click event for dots
-dots.forEach((dot, index) => {
+articleDots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
-    moveSlide(index);
+      moveArticleSlide(index);
   });
 });
 
 // Sync dots with scroll event
 articleContainer.addEventListener("scroll", () => {
   let newIndex = Math.round(articleContainer.scrollLeft / articleWidth);
-  if (newIndex !== currentIndex) {
-    currentIndex = newIndex;
-    updateDots();
+  if (newIndex !== articleCurrentIndex) {
+      articleCurrentIndex = newIndex;
+      updateArticleDots();
   }
 });
 
 // Initialize the first dot as active
-updateDots();
+updateArticleDots();
+// <!--Article section ends-->
 
 
 
+// <!-- awards section starts -->
+// Awards section 
+const awardContainer = document.querySelector(".award-container");
+const awardDots = document.querySelectorAll(".doti");
+const awardPrevBtn = document.querySelector(".lt-arrow");
+const awardNextBtn = document.querySelector(".rt-arrow");
 
-//Awards section................
-document.addEventListener("DOMContentLoaded", function () {
-    const track = document.querySelector(".slider-track");
-    const items = Array.from(track.children);
-  
-    // Clone items to ensure infinite loop
-    items.forEach((item) => {
-      const clone = item.cloneNode(true);
-      track.appendChild(clone);
-    });
+let awardIsDragging = false;
+let awardStartX, awardScrollLeft;
+let awardWidth = awardContainer.children[0].offsetWidth + 20; // Award width + gap
+let awardCurrentIndex = 0;
+
+// Move to a specific slide
+function moveAwardSlide(index) {
+  awardCurrentIndex = index;
+  awardContainer.scrollLeft = index * awardWidth;
+  updateAwardDots();
+}
+
+// Update active dot
+function updateAwardDots() {
+  awardDots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === awardCurrentIndex);
   });
-  
+}
+
+// Arrow button navigation
+awardPrevBtn.addEventListener("click", () => {
+  if (awardCurrentIndex > 0) {
+    moveAwardSlide(awardCurrentIndex - 1);
+  }
+});
+
+awardNextBtn.addEventListener("click", () => {
+  if (awardCurrentIndex < awardDots.length - 1) {
+    moveAwardSlide(awardCurrentIndex + 1);
+  }
+});
+
+// Mouse drag scrolling
+awardContainer.addEventListener("mousedown", (e) => {
+  awardIsDragging = true;
+  awardStartX = e.pageX - awardContainer.offsetLeft;
+  awardScrollLeft = awardContainer.scrollLeft;
+});
+
+awardContainer.addEventListener("mouseleave", () => (awardIsDragging = false));
+awardContainer.addEventListener("mouseup", () => (awardIsDragging = false));
+awardContainer.addEventListener("mousemove", (e) => {
+  if (!awardIsDragging) return;
+  e.preventDefault();
+  const x = e.pageX - awardContainer.offsetLeft;
+  const walk = (x - awardStartX) * 2; // Drag speed
+  awardContainer.scrollLeft = awardScrollLeft - walk;
+});
+
+// Click event for dots
+awardDots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    moveAwardSlide(index);
+  });
+});
+
+// Sync dots with scroll event
+awardContainer.addEventListener("scroll", () => {
+  let newIndex = Math.round(awardContainer.scrollLeft / awardWidth);
+  if (newIndex !== awardCurrentIndex) {
+    awardCurrentIndex = newIndex;
+    updateAwardDots();
+  }
+});
+
+// Initialize the first dot as active
+updateAwardDots();
+
+// <!-- Awards section ends -->
 
 
 // <!-- tilt js effect starts -->

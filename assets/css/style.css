@@ -1523,7 +1523,7 @@ header .navbar ul li a:hover {
 /* Responsive Design1024*/
 @media (max-width: 1024px) {
   .awards h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
   .award-container {
     width: 90%;
@@ -1531,12 +1531,12 @@ header .navbar ul li a:hover {
   .award-box {
     min-width: calc(100% / 2 - 20px);
   }
- 
+}
 
 /* Responsive Design 768px*/
 @media (max-width: 768px) {
   .awards h2 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .award-container {
     width: 90%;

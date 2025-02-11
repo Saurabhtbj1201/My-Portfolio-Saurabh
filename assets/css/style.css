@@ -1047,13 +1047,13 @@ header .navbar ul li a:hover {
 .article {
   background: rgb(50, 1, 49);
   text-align: center;
-  padding: 80px 20px; /* Increased padding for better spacing */
+  padding: 10px 0; /* Reduced padding to prevent heading movement */
 }
 
 .article h2 {
   text-align: center;
   color: #fff;
-  margin-bottom: 20px; /* Increased gap from title */
+  margin-bottom: 10px; /* Increased gap from title */
 }
 
 .article .heading span {
@@ -1113,7 +1113,7 @@ header .navbar ul li a:hover {
 /* Fixing Text Visibility */
 .article-box h3 {
   margin: 15px 0;
-  font-size: 20px;
+  font-size: 22px;
   color: #000 !important; /* Force solid black */
   font-weight: bold;
   background: transparent !important; /* Ensure no unwanted background */
@@ -1121,7 +1121,7 @@ header .navbar ul li a:hover {
 
 .article-box p {
   color: #000 !important; /* Force solid black */
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   background: transparent !important; /* Prevent blending */
 }
@@ -1223,10 +1223,10 @@ header .navbar ul li a:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: rgba(255, 255, 255, 0.519);
+  color: rgb(0, 0, 0);
   border: none;
-  font-size: 18px;
+  font-size: 15px;
   padding: 12px 18px;
   cursor: pointer;
   border-radius: 50px;
@@ -1249,7 +1249,8 @@ header .navbar ul li a:hover {
 
 /* Slider Dots */
 .slider-dots {
-  margin-top: 20px;
+  margin-top: 15px;
+  margin-bottom: 25px;
 }
 
 .dot {
@@ -1260,16 +1261,17 @@ header .navbar ul li a:hover {
   background: #bbb;
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s ease-in-out, transform 0.2s;
+  transition: background 0.3s ease-in-out;
 }
 
 .dot.active {
-  background: #1504ff;
+  background: #ff00f7;
+  transform: scale(1.3);
 }
 
 .dot:hover {
   transform: scale(1.2);
-  background: #0073b1;
+  background: #ff69fc;
 }
 
 /* Responsive Design */
@@ -1297,13 +1299,13 @@ header .navbar ul li a:hover {
 
 @media (max-width: 768px) {
   .article h2 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
   .article-container {
     width: 90%;
   }
   .article-box {
-    min-width: 100%;
+    min-width: calc(100% / 2 - 20px);
   }
   .nav-arrow {
     font-size: 15px;
@@ -1316,147 +1318,274 @@ header .navbar ul li a:hover {
     right: 0.1px;
   }
 }
-
-
 /* Article Section Ends */
 
+
 /* awards section starts */
-/* Awards Section */
 .awards {
   background: rgb(50, 1, 49);
-  padding: 40px 20px;
-  overflow: hidden;
-  height:fit-content;
+  text-align: center;
+  padding: 10px 0px; /* padding for better spacing */
 }
+
 .awards h2 {
   text-align: center;
   color: #fff;
+  margin-bottom: 10px; /* Matching spacing */
 }
-.awards h3 {
-  text-align: center;
-  color: #fff;
-}
-.awards p{
-  color: #fff;
-}
+
 .awards .heading span {
   color: rgb(255, 230, 0);
 }
 
-/* Slider container */
-.slider {
-  position: relative;
+/* Awards Slider */
+.award-slider {
   width: 100%;
-  overflow: visible;
-}
-
-.slider-track {
-  display: flex;
-  animation: slide 20s linear infinite;
-  gap: 25px; /* Adds spacing between award cards */
-}
-
-/* Individual Award Card */
-.award-container {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-  width: 300px;
-  height: auto;
-  background: #6f0664;
-  border-radius: 5px;
   overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Awards Container */
+.award-container {
+  display: flex;
+  gap: 20px; /* Space between awards */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 90%;
+  padding: 10px 0; /* Increased top padding */
+}
+
+.award-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Award Box */
+.award-box {
+  min-width: calc(100% / 3 - 20px);
+  max-width: 400px;
+  flex-shrink: 0;
+  background: #fffefe;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.33);
+  text-align: left;
+}
+
+.award-box img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 7px;
+  border: 1px solid #000000; /* Gold border */
+  transition: transform 0.3s ease-in-out, border-color 0.3s;
+}
+
+.award-box img:hover {
+  transform: scale(1.05);
+}
+
+/* Award Text Styling */
+.award-box h3 {
+  margin: 15px 0;
+  text-align: center;
+  font-size: 20px;
+  color: #000 !important; /* Force solid black */
+  font-weight: bold;
+  background: transparent !important; /* Ensure no unwanted background */
+}
+
+.award-box p {
+  color: #000 !important; /* Force solid black */
+  font-size: 15px;
+  line-height: 1.5;
+  background: transparent !important; /* Prevent blending */
+}
+/* Social Icons Container */
+.award-box .social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.award-box .social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Default Icon Styling */
+.award-box .social-icons a i {
+  font-size: 20px;
+  transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+.awards .award-box .social-icons a[aria-label="Google"] {
+  background: #db4437; /* Google Red */
+}
+.awards .award-box .social-icons a[aria-label="Google"] i {
+  color: #fff;
+}
+
+.awards .award-box .social-icons a[aria-label="LinkedIn"] {
+  background: #0077b5; /* LinkedIn Blue */
+}
+.awards .award-box .social-icons a[aria-label="LinkedIn"] i {
+  color: #fff;
+}
+
+.awards .award-box .social-icons a[aria-label="View"] {
+  background: #ff9800; /* Orange */
+}
+.awards .award-box .social-icons a[aria-label="View"] i {
+  color: #fff;
+}
+
+/* Hover Effects */
+.award-box .social-icons a:hover {
+  transform: scale(1.1);
+}
+
+/* Styling for navigation arrows */
+.navi-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.519);
+  color: rgb(0, 0, 0);
+  border: none;
+  font-size: 15px;
+  padding: 12px 18px;
+  cursor: pointer;
+  border-radius: 50px;
+  z-index: 100;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navi-arrow:hover {
+  background: #ffffff;
+  color: #000;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Left and right arrow positioning */
+.lt-arrow {
+  left: 10px;
+}
+
+.rt-arrow {
+  right: 10px;
+}
+
+/* Slide dot container */
+.slide-doti {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+
+/* Individual dots */
+.doti {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.doti:hover {
+  background-color: ff69fc;
+  transform: scale(1.2);
+}
+
+.doti.active {
+  background-color: #ff00f7;
+  transform: scale(1.3);
+}
+
+
+/* Responsive Design1024*/
+@media (max-width: 1024px) {
+  .awards h2 {
+    font-size: 2.5rem;
+  }
+  .award-container {
+    width: 90%;
+  }
+  .award-box {
+    min-width: calc(100% / 2 - 20px);
+  }
+ 
+
+/* Responsive Design 768px*/
+@media (max-width: 768px) {
+  .awards h2 {
+    font-size: 2rem;
+  }
+  .award-container {
+    width: 90%;
+  }
+  .award-box {
+    min-width: calc(100% / 2 - 20px);
+  }
+}
+
+/* Style for the "View All" button container */
+.article .morebtn,
+.awards .morebtn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Styling for the button */
+.article .morebtn .btn,
+.awards .morebtn .btn {
+  display: inline-flex;
+  align-items: center;
+  background: #015fc5; /* Blue color */
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Icon styling inside the button */
+.article .morebtn .btn i,
+.awards .morebtn .btn i {
+  margin-left: 10px;
   transition: transform 0.3s ease-in-out;
 }
 
-.award-container:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 5px 18px rgb(255, 108, 243);
-  background-color: #030645;
-}
-.slider:hover .slider-track {
-  animation-play-state: paused;
+/* Hover effects */
+.article .morebtn .btn:hover,
+.awards .morebtn .btn:hover {
+  background: #0056b3; /* Darker blue */
 }
 
-.image-box {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  border-radius: 0.8px;
+.article .morebtn .btn:hover i,
+.awards .morebtn .btn:hover i {
+  transform: translateX(5px); /* Moves the arrow slightly to the right */
 }
 
-.image-box img {
-  width: 300px;
-  height: 225px;
-  object-fit: cover;
-}
-
-.text-box {
-  padding: 15px;
-  text-align: center;
-}
-
-.text-box h3 {
-  font-size: 1.5rem;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-/* Animation */
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-500%);
-  }
-}
-
-
-/* For small devices (phones) */
-@media (max-width: 1024px) {
-  .award .h2 {
-     font-size: 1.5rem;
-  }
-  .slider-track {
-    gap: 15px;
-  }
-  .award-container {
-    width: 100%;
-    max-width: 200px;
-  }
-  .image-box {
-    width: fit-content
-  }
-  .text-box h3 {
-    font-size: 1.2rem;
-  }
-  .text-box p {
-    font-size: 1rem;
-  }
-}
-
-/* For medium devices (tablets) */
-@media (max-width: 1024px) {
-  .slider-track {
-    gap: 15px;
-  }
-  .award-container {
-    width: 100%;
-    max-width: 200px;
-  }
-  .image-box{
-    width: fit-content;
-  }
-  .text-box h3 {
-    font-size: 0.9rem;
-  }
-  .text-box p {
-    font-size: 0.8rem;
-  }
-}
 
 /* awards section ends */
 

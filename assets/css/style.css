@@ -1283,6 +1283,7 @@ header .navbar ul li a:hover {
     font-size: 2.5rem;
   }
   .article-box {
+    max-width: 350px;
     min-width: calc(100% / 2 - 20px);
   }
   .nav-arrow {
@@ -1305,6 +1306,7 @@ header .navbar ul li a:hover {
     width: 90%;
   }
   .article-box {
+    max-width: 350px;
     min-width: calc(100% / 2 - 20px);
   }
   .nav-arrow {
@@ -1529,7 +1531,18 @@ header .navbar ul li a:hover {
     width: 90%;
   }
   .award-box {
+    max-width: 350px;
     min-width: calc(100% / 2 - 20px);
+  }
+  .navi-arrow {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+  .lt-arrow {
+    left: 0.1px;
+  }
+  .rt-arrow {
+    right: 0.1px;
   }
 }
 
@@ -1542,7 +1555,18 @@ header .navbar ul li a:hover {
     width: 90%;
   }
   .award-box {
+    max-width: 350px;
     min-width: calc(100% / 2 - 20px);
+  }
+  .navi-arrow {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+  .lt-arrow {
+    left: 0.1px;
+  }
+  .rt-arrow {
+    right: 0.1px;
   }
 }
 

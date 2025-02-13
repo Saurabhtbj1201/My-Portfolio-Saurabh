@@ -77,14 +77,6 @@
         </ul>
     </section>
     <section>
-        <h2>🔍 Looking for Collaborators</h2>
-        <p>I am seeking a collaborator proficient in <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> to:</p>
-        <ul>
-            <li>Finalize the <strong>Projects</strong> section.</li>
-            <li>Complete the <strong>Awards & Achievements</strong> section.</li>
-        </ul>
-    </section>
-    <section>
         <h2>📥 How to Contribute</h2>
         <ol>
             <li><strong>Fork</strong> the repository.</li>

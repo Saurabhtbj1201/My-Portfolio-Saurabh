@@ -29,6 +29,20 @@ $(document).ready(function () {
         });
     });
 
+// Select the progress bar fill element
+const progressBar = document.querySelector('.filled');
+
+window.addEventListener('scroll', () => {
+    // Calculate the scroll progress
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+    // Update the width of the progress bar
+    progressBar.style.width = scrollPercentage + '%';
+});
+
+
     // smooth scrolling
     $('a[href*="#"]').on('click', function (e) {
         e.preventDefault();

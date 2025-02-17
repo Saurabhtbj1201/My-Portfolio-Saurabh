@@ -64,7 +64,7 @@ html::-webkit-scrollbar-thumb {
   top: 0;
   left: 0;
   width: 100%;
-  height: 3px; /* Slightly thicker */
+  height: 4px; /* Slightly thicker */
   background: #b0b3ff; /* Light background */
   z-index: 2000; /* Increased z-index to stay on top */
 }
@@ -74,6 +74,12 @@ html::-webkit-scrollbar-thumb {
   width: 0%; /* Starts empty */
   background: #ff8401; /* Orange color */
   transition: width 0.1s linear;
+}
+
+@media (max-width: 740px) {
+  .progress-bar {
+    height: 3px; /* Reduced height */
+  }
 }
 
 /* navbar starts */

@@ -770,10 +770,22 @@ header .navbar ul li a:hover {
 /* experience section starts */
 
 
+
 /* experience section starts */
 .experience {
-  background: #fff8f0;
+  background: #e5ecfb;
 }
+.experience .h2 {
+  font-size: 3.5rem;
+  color: #000000;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 2rem;
+}
+.experience .heading span {
+  color: rgb(120, 3, 179);
+}
+
 .experience .timeline {
   position: relative;
   max-width: 1200px;
@@ -804,7 +816,7 @@ header .navbar ul li a:hover {
   height: 25px;
   right: -17px;
   background-color: rgb(255, 255, 255);
-  border: 4px solid #ff9f55;
+  border: 4px solid #0400ff;
   top: 15px;
   border-radius: 50%;
   z-index: 100;
@@ -829,9 +841,9 @@ header .navbar ul li a:hover {
   width: 0;
   z-index: 1;
   right: 30px;
-  border: medium solid #f68c09;
+  border: medium solid #001eff;
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent #f68c09;
+  border-color: transparent transparent transparent #002fa6;
 }
 /* arrows pointing left  */
 .experience .right::before {
@@ -842,20 +854,24 @@ header .navbar ul li a:hover {
   width: 0;
   z-index: 1;
   left: 30px;
-  border: medium solid #f68c09;
+  border: medium solid #001eff;
   border-width: 10px 10px 10px 0;
-  border-color: transparent #f68c09 transparent transparent;
+  border-color: transparent #002fa6 transparent transparent;
 }
 .experience .right::after {
   left: -16px;
 }
 .experience .content {
-  background-color: #f68c09;
+  background-color: #ebe9ff;
   position: relative;
   border-radius: 6px;
+  border: #000000 1px solid;
+  padding: 7px;
+  box-shadow: #000000 0 0 5px;
+  transition: 0.3s ease-in-out;
 }
 .experience .content .tag {
-  background: #7c4400;
+  background: #0011a5;
   color: #fff;
   font-size: 1.5rem;
   padding-top: 1.5rem;
@@ -868,7 +884,6 @@ header .navbar ul li a:hover {
   padding-left: 1.5rem;
 }
 .experience .content .desc { 
-  background: ffba67; 
   margin-left: 1.5rem;
   padding-bottom: 1rem;
 }
@@ -876,11 +891,33 @@ header .navbar ul li a:hover {
   font-size: 1.5rem;
   font-weight: 600;
 }
+.experience .content .desc h3 a { 
+  color: #000000;
+  border-radius: 5rem;
+  border: #000000 1px solid;
+  padding: 1px 10px;
+  margin: 5px;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #ffffff;
+  color: #000000;
+}
 .experience .content .desc p {
   font-size: 1.2rem;
-  color: #fff;
+  color: #0700c6;
   size: 1.2px;
 }
+.experience .content:hover {
+  background: #ffffff;
+  box-shadow: #000000 0 0 10px;
+  transition: 0.3s ease-in-out;
+}
+/* Ensuring that the links inside also change when hovering over .experience .content */
+.experience .content:hover .desc h3 a {
+  background-color: #ebe9ff;
+  color: #000000;
+}
+
 /* view all button */
 .morebtn {
   display: flex;
@@ -914,13 +951,18 @@ header .navbar ul li a:hover {
   transform: translateX(5px);
 }
 
+.section-divider {
+  border: none; /* Removes default styling */
+  height: 1px; /* Adjust thickness */
+  background-color: rgb(150, 150, 150); /* Set color */
+  margin-top: 20px; /* Space before the line */
+  width: 100%; /* Make sure it stretches across */
+}
+
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
   .experience {
     min-height: 80vh;
-  }
-  .experience .h2{
-    font-size: 1.5rem;
   }
   .experience .timeline {
     margin-top: 2rem;
@@ -938,9 +980,9 @@ header .navbar ul li a:hover {
   }
   .experience .container::before {
     left: 61px;
-    border: medium solid #f68c09;
+    border: medium solid #0012d7;
     border-width: 10px 10px 10px 0;
-    border-color: transparent #f68c09 transparent transparent;
+    border-color: transparent #3500e5 transparent transparent;
   }
   .experience .left::after {
     left: 15px;
@@ -956,7 +998,6 @@ header .navbar ul li a:hover {
   }
 }
 /* experience media queries ends */
-/* experience section ends */
 
 
 /* education section starts */

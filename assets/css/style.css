@@ -631,141 +631,169 @@ header .navbar ul li a:hover {
 /* skills section ends */
 
 
-/* projects section starts */
+/* Projects Section Starts */
 .project {
-  background: #000000;
-  animation: fadeIn 1s ease-in-out; /* Fade-in effect for the section */
+  background: #e5ecfb;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .project h2 {
-  color: #fff;
+  color: #000000;
   text-align: center;
-  animation: fadeIn 1s ease-in-out; /* Heading animation */
 }
 
 .project .heading span {
-  color: rgb(255, 230, 0);
-  animation: fadeIn 1s ease-in-out;
+  color: rgb(120, 3, 179);
 }
 
+/* General Styling */
 .project-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  margin-top: 20px;
+  justify-content: center;
+  padding: 20px;
 }
 
+/* Project Card */
 .project-card {
   position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 175px;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: scaleUp 0.8s ease; /* Add scale-up animation */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.538);
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-.project-card img {
+.project-card:hover,
+.project-card.hover {
+  border: 2px solid #ff0000;
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.534);
+}
+
+/* Project Image */
+.project-img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
-.project-card .project-info {
-  background: rgba(45, 2, 51, 0.995);
-  padding: 15px;
-  text-align: center;
+/* Project Info */
+.project-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
   display: flex;
   flex-direction: column;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 1;
+  padding: 20px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  text-align: center;
+}
+.hidden-title{
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
-.project-card .project-info h3 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
-  color: #ffffff;
+/* Title & Description */
+.hidden-title,
+.hidden-description,
+.hidden-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.project-card .project-info p {
-  margin: 0 0 10px;
-  font-size: 0.9rem;
-  color: #ffffff;
-}
-
-.project-card .project-info .btn {
-  padding: 8px 16px;
-  background: #980090;
-  color: #fff;
+/* View Button */
+.hidden-btn {
+  margin-top: 8px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #ff0217, #ffa502);
   border-radius: 50px;
+  text-transform: uppercase;
   text-decoration: none;
-  font-size: 1rem;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease;
 }
 
-.project-card .project-info .btn:hover {
-  background: #ff00cc;
-  transform: scale(1.1); /* Scale up on hover */
+.hidden-btn:hover {
+  background: linear-gradient(45deg, #ffa502, #ff0217);
+  box-shadow: 0 0 8px rgba(255, 102, 102, 0.8);
 }
 
-.project-card:hover {
-  transform: translateY(-5px); /* Subtle upward movement */
-  box-shadow: 0 10px 15px rgba(255, 0, 255, 0.7);
-  background-color: #1b0447;
+/* Hover & Auto-hover Effects */
+.project-card:hover .project-info,
+.project-card.hover .project-info {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.project-card:hover img {
-  transform: scale(1.1); /* Slight zoom-in effect */
-  filter: brightness(1.2); /* Brighten the image */
+.project-card:hover .hidden-title,
+.project-card.hover .hidden-title,
+.project-card:hover .hidden-description,
+.project-card.hover .hidden-description,
+.project-card:hover .hidden-btn,
+.project-card.hover .hidden-btn {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Button animations */
-.morebtn .btn {
-  padding: 10px 30px;
-  background-color: #361bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background 0.3s ease, transform 0.3s ease;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.morebtn .btn:hover {
-  background-color: #007bff;
-  transform: scale(1.1); /* Scale-up effect on hover */
-}
-
-/* Responsive adjustments */
-@media (max-width: 1080px) {
-  .project h2 {
-    font-size: 1.5rem;
-  }
+/* Responsive Design */
+@media screen and (max-width: 900px) {
   .project-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
   }
-  .project-card {
-    border-radius: 5px;
-    animation: scaleUp 0.8s ease; /* Retain scale-up animation */
+
+  .hidden-title {
+    font-size: 16px;
+  }
+
+  .hidden-description {
+    font-size: 10px;
+  }
+
+  .hidden-btn {
+    font-size: 10px;
+    padding: 6px 12px;
   }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .project-container {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 15px;
+    grid-template-columns: repeat(1, 1fr);
   }
-  .project h2 {
-    font-size: 1.2rem;
+
+  .hidden-title {
+    font-size: 15px;
   }
-  .morebtn .btn {
-    font-size: 0.9rem;
-    padding: 8px 20px;
+
+  .hidden-description {
+    font-size: 10px;
+  }
+
+  .hidden-btn {
+    font-size: 11px;
+    padding: 5px 10px;
   }
 }
+/*projects media queries ends */
 
 /* experience section starts */
 

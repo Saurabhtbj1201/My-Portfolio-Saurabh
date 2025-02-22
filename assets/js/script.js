@@ -51,6 +51,29 @@ window.addEventListener('scroll', () => {
         }, 500, 'linear')
     });
 
+    const themeToggle = document.getElementById("theme-toggle");
+    const body = document.body;
+    
+    // Check saved theme preference
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark-mode");
+      themeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon for light mode
+    }
+    
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+    
+      // Change icon based on theme
+      if (body.classList.contains("dark-mode")) {
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        localStorage.setItem("theme", "dark");
+      } else {
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        localStorage.setItem("theme", "light");
+      }
+    });
+    
+
     // EmailJS to send contact form data
 $("#contact-form").submit(function (event) {
     event.preventDefault(); // Prevent the default form submission

@@ -31,13 +31,13 @@ html {
   overflow-x: hidden;
 }
 html::-webkit-scrollbar {
-  width: 0.8rem;
+  width: 0.5rem;
 }
 html::-webkit-scrollbar-track {
-  background: rgb(235, 202, 245);
+  background: #ffc6ff;
 }
 html::-webkit-scrollbar-thumb {
-  background: #420177;
+  background: #ff7700;
 }
 
 /* pre loader start */
@@ -160,10 +160,11 @@ header .navbar ul li a:hover {
   }
   header .navbar {
     position: fixed;
-    top: 6.5rem;
+    top: 5.5rem;
     right: -120%;
     width: 75%;
-    height: 100%;
+    height: calc(100vh - 5.5rem); /* Ensures it fits within the viewport */
+    overflow-y: auto; /* Enables scrolling if needed */
     text-align: left;
     align-items: flex-start;
     background-color: #0e0f31;
@@ -243,6 +244,41 @@ header .navbar ul li a:hover {
 }
 .dark-mode .theme-btn:hover {
   color: #8995ff;
+}
+
+
+/* Dark Mode for Hamburger Menu */
+.dark-mode #menu {
+  color: rgb(220, 220, 220); /* Lightened for contrast */
+}
+
+@media (max-width: 768px) {
+  .dark-mode #menu {
+    display: block;
+    color: rgb(255, 255, 255); /* White for visibility */
+  }
+  .dark-mode header .navbar {
+    background-color: #121212; /* True dark mode */
+    box-shadow: -2px 0 10px rgba(255, 255, 255, 0.1);
+  }
+  .dark-mode header .navbar ul li {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .dark-mode header .navbar ul li:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .dark-mode header .navbar ul li a {
+    color: #ffffff; /* Bright white text */
+    font-size: 2rem;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .dark-mode header .navbar ul li a.active,
+  .dark-mode header .navbar ul li a:hover {
+    color: #ffcc00; /* Accent color */
+    border-bottom: 0.5rem solid #ffcc00;
+  }
 }
 /* hamburger icon ends */
 

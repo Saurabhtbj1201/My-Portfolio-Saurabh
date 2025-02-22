@@ -115,6 +115,42 @@ fetchData().then(data => {
 });
 
 
+// <!--projects call-->
+document.addEventListener("DOMContentLoaded", function () {
+  const projectCards = document.querySelectorAll(".project-card");
+  let index = 0;
+  let hoverCount = getHoverCount();
+
+  function getHoverCount() {
+      if (window.innerWidth <= 600) {
+          return 1;
+      } else if (window.innerWidth <= 900) {
+          return 2;
+      } else {
+          return 3;
+      }
+  }
+
+  function applyAutoHover() {
+      projectCards.forEach((card) => card.classList.remove("hover")); // Remove hover effect from all
+
+      for (let i = 0; i < hoverCount; i++) {
+          let hoverIndex = (index + i) % projectCards.length;
+          projectCards[hoverIndex].classList.add("hover"); // Apply hover effect to selected cards
+      }
+
+      index = (index + hoverCount) % projectCards.length; // Move index forward
+  }
+
+  setInterval(applyAutoHover, 2000); // Auto-hover effect every 2 seconds
+
+  // Adjust hover count on window resize
+  window.addEventListener("resize", function () {
+      hoverCount = getHoverCount();
+  });
+});
+
+
 // <!--Article section -->
 const articleContainer = document.querySelector(".article-container");
 const articleDots = document.querySelectorAll(".dot");

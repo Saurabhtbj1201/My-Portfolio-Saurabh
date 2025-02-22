@@ -200,6 +200,50 @@ header .navbar ul li a:hover {
     right: 0;
   }
 }
+/* Theme Toggle Button */
+.theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #000000;
+  transition: 0.3s;
+}
+.theme-btn:hover {
+  color: #011aff;
+}
+/* Dark Mode */
+.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+.dark-mode header {
+  background-color: #151515;
+  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.3);
+}
+.dark-mode .heading{
+  color: #ffffff;
+}
+.dark-mode .heading span{
+  color: #F07900;
+}
+.dark-mode header .logo {
+  color: #ffffff;
+}
+.dark-mode header .navbar ul li a {
+  color: #ffffff;
+}
+.dark-mode header .navbar ul li a.active,
+.dark-mode header .navbar ul li a:hover {
+  color: #F8A145;
+  border-bottom: 0.2rem solid #F07900;
+}
+.dark-mode .theme-btn {
+  color: #ffffff;
+}
+.dark-mode .theme-btn:hover {
+  color: #8995ff;
+}
 /* hamburger icon ends */
 
 /* hero section starts*/
@@ -365,6 +409,45 @@ header .navbar ul li a:hover {
     font-size: 2.2rem;
   }
 }
+/* Dark Mode Styles */
+.dark-mode .home {
+  background-color: #121212;
+}
+.dark-mode .home .content h2 {
+  color: #ffffff;
+}
+.dark-mode .home .content h2 span {
+  color: #F8A145;
+}
+.dark-mode .home .content p {
+  color: #e0e0e0;
+}
+.dark-mode .home .content p span {
+  color: #38ffff;
+}
+.dark-mode .home .btn {
+  background: #6200ea;
+  box-shadow: 0px 5px 18px rgba(98, 0, 234, 0.6);
+}
+.dark-mode .home .btn:hover {
+  background: #3700b3;
+}
+/* Image Styling in Dark Mode */
+.dark-mode .home .image img {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+.dark-mode .home .image img:hover {
+  box-shadow: 0 5px 15px rgb(255, 255, 255);
+}
+/* Social Icons in Dark Mode */
+.dark-mode .social-icons a {
+  color: #ffffff;
+  background-color: #3b3b3b;
+}
+.dark-mode .social-icons a:hover {
+  background-color: #0101ff;
+}
+
 /* hero media queries ends*/
 /* hero section end */
 
@@ -515,7 +598,52 @@ header .navbar ul li a:hover {
     gap: 0;
   }
 }
-/* about media queries ends*/
+/* Dark Mode Styles */
+.dark-mode .about {
+  background: #121212;
+}
+.dark-mode .about .row .content h3 {
+  color: #ffffff;
+}
+.dark-mode .about .row .content .tag {
+  color: #ff9800;
+}
+.dark-mode .about .row .content p {
+  color: #ffffff;
+}
+.dark-mode .about .row .content .box-container .box p span {
+  color: #00f2ff;
+}
+/* Image Styling in Dark Mode */
+.dark-mode .about .row .image img {
+  box-shadow: 0 5px 10px rgb(96, 96, 96);
+  mix-blend-mode: normal;
+}
+
+.dark-mode .about .row .image img:hover {
+  mix-blend-mode: normal;
+  box-shadow: 0 5px 15px #D35100;
+}
+/* Resume Button Dark Mode */
+.dark-mode .resumebtn .btn {
+  background: #6200ea;
+  box-shadow: 0px 5px 10px rgba(98, 0, 234, 0.6);
+}
+.dark-mode .resumebtn .btn:hover {
+  background: #3c00c7;
+  box-shadow: 0px 5px 10px rgba(98, 0, 234, 0.8);
+}
+
+/* Circular Button in Dark Mode */
+.dark-mode .resumebtn .circle-btn {
+  background: #F07900;
+}
+
+.dark-mode .resumebtn .circle-btn:hover {
+  background: #ff9800;
+  box-shadow: 0px 5px 10px rgba(255, 193, 255, 0.6);
+}
+
 /* about section ends */
 
 /* skills section starts */
@@ -628,8 +756,45 @@ header .navbar ul li a:hover {
   }
 }
 /* skills media queries ends*/
-/* skills section ends */
+/* Dark Mode - Skills Section */
+.dark-mode .skills {
+  background: #121212;
+}
+.dark-mode .skills h2 span{
+  color: #F8A145;
+}
+.dark-mode .skills .container {
+  background: #121212;
+  color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+}
 
+.dark-mode .skills .container .bar {
+  background: #151515;
+  border-radius: 1rem;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgb(255, 255, 255);
+  transition: 0.2s ease-in-out;
+}
+.dark-mode .skills .container .bar:hover {
+  box-shadow: 0 2px 15px rgb(255, 255, 255) !important;
+}
+/* .dark-mode .skills .container .bar .info img {
+  filter: invert(1); 
+} */
+.dark-mode .skills .container .bar .info span {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  margin-left: 0.5rem;
+  font-style: normal;
+}
+/* skills section ends */
 
 /* Projects Section Starts */
 .project {
@@ -793,9 +958,42 @@ header .navbar ul li a:hover {
     padding: 5px 10px;
   }
 }
-/*projects media queries ends */
 
-/* experience section starts */
+/* Dark Mode - Project Section */
+.dark-mode .project {
+  background: #121212;
+}
+.dark-mode .project h2 {
+  color: #ffffff;
+}
+.dark-mode .project .heading span {
+  color: #F8A145;
+}
+
+.dark-mode .project-card:hover,
+.dark-mode .project-card.hover {
+  box-shadow: 0 4px 10px #F8A145;
+}
+
+/* Project Info */
+
+/* Title, Description, and Button */
+.dark-mode .hidden-title {
+  color: #F8A145; /* Bright yellow */
+}
+.dark-mode .hidden-description {
+  color: #ffffff; /* Soft white */
+}
+
+.dark-mode .hidden-btn {
+  background: linear-gradient(45deg, #ff6600, #ffcc00);
+  color: black;
+}
+.dark-mode .hidden-btn:hover {
+  background: linear-gradient(45deg, #ffcc00, #ff6600);
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+}
+/*projects media queries ends */
 
 
 
@@ -1025,6 +1223,68 @@ header .navbar ul li a:hover {
     margin-top: 3rem;
   }
 }
+/*Dark mode*/
+.dark-mode .experience {
+  background: #121212;
+}
+.dark-mode .experience h2 {
+  color: #ffffff;
+}
+.dark-mode .experience .heading span {
+  color: #F8A145;
+}
+/* Timeline Line */
+.dark-mode .experience .timeline::after {
+  background: #ffcc00; /* Bright yellow line */
+}
+/* Timeline Containers */
+.dark-mode .experience .container {
+  background: transparent; /* Keeping it clean */
+}
+/* Circles on Timeline */
+.dark-mode .experience .container::after {
+  background-color: #000;
+  border: 4px solid #ff6600;
+  color: #ffcc00; /* High contrast yellow */
+}
+/* Timeline Arrows */
+.dark-mode .experience .left::before,
+.dark-mode .experience .right::before {
+  border-color: transparent #ff6600 transparent transparent;
+}
+
+/* Content Box */
+.dark-mode .experience .content {
+  background-color: #111; /* Dark gray */
+  border: #ffcc00 1px solid;
+  box-shadow: #ff6600 0 0 5px;
+  color: #ffffff;
+  transition: 0.3s ease-in-out;
+}
+
+/* Tag Styling */
+.dark-mode .experience .content .tag {
+  background: #ff6600 ;
+  color: #fff;
+}
+
+/* Description */
+.dark-mode .experience .content .desc h3 a {
+  background-color: #ff6600;
+  color: #fff;
+}
+
+.dark-mode .experience .content .desc p {
+  color: #ffcc00;
+}
+
+.dark-mode .experience .content:hover {
+  background: #000000;
+  box-shadow: #ff6600 0 2px 10px;
+}
+.dark-mode .section-divider {
+  background-color: #ff6600;
+}
 /* experience media queries ends */
 
 
@@ -1132,6 +1392,37 @@ header .navbar ul li a:hover {
     flex-wrap: wrap;
   }
 }
+/* Dark Mode - Education Section */
+.dark-mode .education {
+  background: #121212;
+}
+.dark-mode .education .heading {
+  color: #ffffff;
+}
+.dark-mode .education .heading span {
+  color: #F8A145;
+}
+/* Box Container */
+.dark-mode .education .box-container .box {
+  background: #000000; /* Dark gray background */
+  box-shadow: 0 2px 5px rgb(247, 247, 247);
+}
+.dark-mode .education .box-container .box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.995);
+}
+/* Content Styling */
+.dark-mode .education .box-container .box .content h3 {
+  color: #ffffff; /* Bright yellow for high contrast */
+}
+.dark-mode .education .box-container .box .content p {
+  color: #ffffff; /* Light gray for readability */
+}
+/* Headings */
+.dark-mode .education h4 {
+  color: #F8A145; /* Vibrant orange for better visibility */
+}
+
 /* education media queries ends*/
 /* education section ends */
 
@@ -1413,6 +1704,17 @@ header .navbar ul li a:hover {
     right: 0.1px;
   }
 }
+/* Dark Mode - Article Section */
+.dark-mode .article {
+  background: #121212;
+}
+.dark-mode .article h2 {
+  color: #ffffff;
+}
+.dark-mode .article .heading span {
+  color: #F8A145;
+}
+
 /* Article Section Ends */
 
 
@@ -1662,6 +1964,16 @@ header .navbar ul li a:hover {
     right: 0.1px;
   }
 }
+/* Dark Mode - awards Section */
+.dark-mode .awards {
+  background: #121212;
+}
+.dark-mode .awards h2 {
+  color: #ffffff;
+}
+.dark-mode .awards .heading span {
+  color: #F8A145;
+}
 
 /* Style for the "View All" button container */
 .article .morebtn,
@@ -1702,8 +2014,6 @@ header .navbar ul li a:hover {
 .awards .morebtn .btn:hover i {
   transform: translateX(5px); /* Moves the arrow slightly to the right */
 }
-
-
 /* awards section ends */
 
 
@@ -1863,6 +2173,44 @@ form .button-area {
     margin-right: 2rem;
   }
 }
+/* Dark Mode - contact Section */
+.dark-mode .contact {
+  background: #121212;
+}
+.dark-mode .contact h2 {
+  color: #ffffff;
+}
+.dark-mode .contact .heading span {
+  color: #F8A145;
+}
+/* Dark Mode - Contact Section */
+.dark-mode .contact .container {
+  background: #202020; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+.dark-mode form i {
+  color: #ffffff; /* Lighter icon color */
+}
+/* Form Fields */
+.dark-mode form .field input,
+.dark-mode form .message textarea {
+  background: #000000; /* Darker input fields */
+  color: #ffffff; /* White text */
+  border: 1px solid #c1c0c1;
+}
+.dark-mode .field input::placeholder,
+.dark-mode .message textarea::placeholder {
+  color: rgb(175, 174, 174);
+}
+.dark-mode .field input:focus,
+.dark-mode .message textarea:focus {
+  border: 2px solid #bb86fc; /* Purple glow on focus */
+}
+
+.dark-mode .field input:focus ~ i,
+.dark-mode .message textarea:focus ~ i {
+  color: #bb86fc; /* Matching purple for icons */
+}
 /* contact section media queries ends */
 /* contact section ends */
 
@@ -2001,5 +2349,12 @@ form .button-area {
 }
 #scroll-top.active {
   top: calc(100% - 12rem);
+}
+
+.dark-mode .footer{
+  background-color: #000000;
+}
+.dark-mode .footer .credit{
+  color: #a9feff;
 }
 /* scroll top ends */

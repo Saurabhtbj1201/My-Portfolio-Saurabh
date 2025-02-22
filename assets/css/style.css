@@ -22,7 +22,7 @@ body {
 }
 
 *::selection {
-  background: #2b3dda;
+  background: #ff8800;
   color: #fff;
 }
 
@@ -169,6 +169,7 @@ header .navbar ul li a:hover {
     align-items: flex-start;
     background-color: #0e0f31;
   }
+  
   header .navbar ul {
     flex-flow: column;
     padding: 1rem;
@@ -213,6 +214,13 @@ header .navbar ul li a:hover {
 .theme-btn:hover {
   color: #011aff;
 }
+@media (max-width: 768px) {
+  .theme-btn {
+    font-size: 4rem;
+    color: #ffffff;
+    align-items: top;
+  }
+}
 /* Dark Mode */
 .dark-mode {
   background-color: #000000;
@@ -245,7 +253,6 @@ header .navbar ul li a:hover {
 .dark-mode .theme-btn:hover {
   color: #8995ff;
 }
-
 
 /* Dark Mode for Hamburger Menu */
 .dark-mode #menu {

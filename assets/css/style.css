@@ -865,6 +865,14 @@ header .navbar ul li a:hover {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
+.project-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #000000;
+}
+
 .project-card:hover,
 .project-card.hover {
   border: 2px solid #ff0000;
@@ -961,6 +969,12 @@ header .navbar ul li a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .project-card-container .project-title {
+    font-size: 15px;
+    padding: 5px;
+  }
+
+
   .hidden-title {
     font-size: 16px;
   }
@@ -981,6 +995,11 @@ header .navbar ul li a:hover {
   }
   .project-container {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .project-card-container .project-title {
+    font-size: 15px;
+    padding: 5px;
   }
 
   .hidden-title {
@@ -1007,7 +1026,9 @@ header .navbar ul li a:hover {
 .dark-mode .project .heading span {
   color: #F8A145;
 }
-
+.dark-mode .project-title {
+  color: #F8A145; /* Adjust for dark mode */
+}
 .dark-mode .project-card:hover,
 .dark-mode .project-card.hover {
   box-shadow: 0 4px 10px #F8A145;
@@ -2521,7 +2542,7 @@ form .button-area {
   .footer .box-container .box .share a {
     padding: 1.4rem;
   }
-  
+
   .footer .credit {
     font-size: 1.2rem;
   }

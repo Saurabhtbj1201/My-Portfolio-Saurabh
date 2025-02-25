@@ -700,6 +700,13 @@ header .navbar ul li a:hover {
 .skills .heading span {
   color: rgb(120, 3, 179);
 }
+.skills p {
+  font-size: 1.5rem;
+  color: #000000;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+}
 .skills .container {
   color: #ffffff;
   border-radius: 1rem;
@@ -752,6 +759,9 @@ header .navbar ul li a:hover {
 
 /*  skills media queries starts */
 @media screen and (max-width: 900px) {
+    .skills p {
+    font-size: 1.3rem; 
+  }
   .skills .container {
     padding: 1rem; /* Add some padding */
     margin: 0 auto; /* Center the container */
@@ -785,6 +795,10 @@ header .navbar ul li a:hover {
 
 /* For even smaller devices like phones in portrait mode */
 @media screen and (max-width: 600px) {
+   .skills p {
+    font-size: 1.2rem; 
+  }
+  
   .skills .container .row {
     grid-template-columns: repeat(3, 1fr); /* double column layout */
     gap: 0.8rem; /* Adjust gap */
@@ -806,6 +820,9 @@ header .navbar ul li a:hover {
 }
 .dark-mode .skills h2 span{
   color: #F8A145;
+}
+.dark-mode .skills h2 span{
+  color: #ffffff;
 }
 .dark-mode .skills .container {
   background: #121212;
@@ -2239,6 +2256,13 @@ header .navbar ul li a:hover {
   background: #e5ecfb;
   min-height: 60vh;
 }
+.contact p {
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
 .contact .container {
   max-width: 1050px;
   width: 100%;
@@ -2371,6 +2395,9 @@ form .button-area {
 }
 /* contact section media queries starts */
 @media (max-width: 900px) {
+  .contact p {
+    font-size: 1.3rem;
+  }
   .contact {
     min-height: 70vh;
   }
@@ -2397,6 +2424,9 @@ form .button-area {
 }
 .dark-mode .contact .heading span {
   color: #F8A145;
+}
+.dark-mode p {
+  color: #ffffff;
 }
 /* Dark Mode - Contact Section */
 .dark-mode .contact .container {

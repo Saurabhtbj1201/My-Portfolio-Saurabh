@@ -2482,7 +2482,7 @@ form .button-area {
 .footer {
   min-height: auto;
   padding-top: 0;
-  background: #bac3ff;
+  background: #c5cdff;
 }
 .footer .box-container {
   display: flex;
@@ -2495,16 +2495,18 @@ form .button-area {
 }
 .footer .box-container .box h3 {
   font-size: 2.5rem;
-  color: #000000;
+  color: #0f00b0;
   padding-bottom: 1rem;
   font-weight: 600;
 }
 .footer .box-container .box p {
   font-size: 1.5rem;
-  font-weight: 550;
   color: #000000;
   padding: 0.7rem 0;
   text-transform: none;
+}
+.footer .box-container .box p i.fas {
+  color: #0f00b0;
 }
 .footer .box-container .box p i {
   padding-right: 1rem;
@@ -2534,8 +2536,8 @@ form .button-area {
   font-size: 1.9rem;
   margin-right: 1rem;
   transition: 0.2s;
-  background: rgb(0, 0, 0);
-  color: #ffffff;
+  background: transparent;
+  color: #000000;
   border: none;
 }
 .footer .box-container .box .share a:nth-child(1):hover {
@@ -2649,7 +2651,10 @@ form .button-area {
 .dark-mode .footer .box a {
   color: #ffffff;
 }
-.footer .box-container .box a:hover {
+.dark-mode .footer .box a:hover {
+  color: #ffffff;
+}
+.dark-mode .footer .box-container .box .share a {
   color: #ffffff;
 }
 .dark-mode .footer p i.fas {

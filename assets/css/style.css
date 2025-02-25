@@ -82,6 +82,15 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
+/* Dark Mode Loading Bar */
+.dark-mode .progress-bar {
+  background: #333; /* Dark background */
+}
+
+.dark-mode .filled {
+  background: #ffb700; /* Bright yellow-orange for contrast */
+}
+
 /* navbar starts */
 header {
   position: fixed;
@@ -2638,6 +2647,9 @@ form .button-area {
   color: #ffffff;
 }
 .dark-mode .footer .box a {
+  color: #ffffff;
+}
+.footer .box-container .box a:hover {
   color: #ffffff;
 }
 .dark-mode .footer p i.fas {

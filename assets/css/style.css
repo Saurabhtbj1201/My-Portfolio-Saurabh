@@ -1027,7 +1027,7 @@ header .navbar ul li a:hover {
   color: #F8A145;
 }
 .dark-mode .project-title {
-  color: #F8A145; /* Adjust for dark mode */
+  color: #ffffff; /* Adjust for dark mode */
 }
 .dark-mode .project-card:hover,
 .dark-mode .project-card.hover {

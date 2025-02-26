@@ -21,10 +21,18 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-*::selection {
-  background: #ff8800;
-  color: #fff;
+/* Normal mode selection / 
+*::selection { 
+background: linear-gradient(90deg, #0000FF, #8A2BE2, #FFC0CB); 
+color: #000000;
 }
+
+/* Dark mode selection */ 
+.dark-mode *::selection {
+background: #FF8800;
+color: #FFFFFF;
+}
+
 
 html {
   font-size: 62.5%;

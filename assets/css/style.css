@@ -21,7 +21,8 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* Normal mode selection / 
+/* Normal mode selection */
+
 *::selection { 
 background: #FFC0CB); 
 color: #000000;

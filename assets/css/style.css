@@ -24,7 +24,7 @@ body {
 /* Normal mode selection */
 
 *::selection { 
-background: #FFC0CB); 
+background: #ef89ff; 
 color: #000000;
 }
 

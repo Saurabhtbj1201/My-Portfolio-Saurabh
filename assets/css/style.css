@@ -23,7 +23,7 @@ body {
 
 /* Normal mode selection / 
 *::selection { 
-background: linear-gradient(90deg, #0000FF, #8A2BE2, #FFC0CB); 
+background: #FFC0CB); 
 color: #000000;
 }
 

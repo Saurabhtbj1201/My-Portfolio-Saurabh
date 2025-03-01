@@ -462,6 +462,8 @@ header .navbar ul li a:hover {
   }
   .home .image img {
     margin-top: -12rem;
+    margin-left: -0.1%;
+    border-radius: 1px;
   }
   .home .content p {
     font-size: 2.2rem;

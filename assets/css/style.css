@@ -341,14 +341,14 @@ header .navbar ul li a:hover {
   z-index: 1;
 }
 .home .image img {
-  width: 70%;
+  width: 90%;
   margin-left: 6rem;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 10rem;
   cursor: pointer;
 }
 .home .image img:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  scale: 1.1;
+  filter: drop-shadow(0px 5px 10px rgba(255, 106, 0, 0.551)); /* Shadow appears behind PNG */
 }
 .home .content h2 {
   font-size: 5rem;
@@ -448,7 +448,7 @@ header .navbar ul li a:hover {
   background-color: #070707;
 }
 .social-icons a.instagram:hover {
-  background-color: #ff00ea;
+  background: linear-gradient(45deg, #c13584, #fd1d1d);
 }
 /* social icons end */
 
@@ -495,10 +495,10 @@ header .navbar ul li a:hover {
 }
 /* Image Styling in Dark Mode */
 .dark-mode .home .image img {
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 2px 5px rgba(255, 106, 0, 0.551)); /* Shadow appears behind PNG */
 }
 .dark-mode .home .image img:hover {
-  box-shadow: 0 5px 15px rgb(255, 255, 255);
+  filter: drop-shadow(0px 5px 10px rgba(255, 106, 0, 0.675)); /* Shadow appears behind PNG */
 }
 /* Social Icons in Dark Mode */
 .dark-mode .social-icons a {

@@ -1,96 +1,125 @@
+
+---
 <body>
-    <header>
-        <h1>Welcome to Saurabh's Portfolio - GitHub Repository</h1>
-    </header>
-    <section>
+    <div class="container">
+        <h1>🚀 Welcome to Saurabh's Portfolio - GitHub Repository</h1>
         <h2>🌟 Project Overview</h2>
-        <p>Welcome to the repository for Saurabh's Portfolio—a fully responsive personal portfolio website built using basic HTML, CSS, and JavaScript. This project is 80% complete, and I'm looking for a collaborator who is proficient in these technologies to help finalize the remaining sections. Below is the current progress and details of each section:</p>
+        <p>Welcome to the repository for Saurabh's Portfolio—a fully responsive personal portfolio website built using HTML, CSS, and JavaScript. This project is 80% complete, and I'm looking for a collaborator proficient in these technologies to help finalize the remaining sections.</p>
+        <h2>🔥 Features</h2>
         <h3>1. Home</h3>
         <ul>
-            <li>A warm welcome message inviting visitors to explore my portfolio.</li>
-            <li>Includes a clickable <code>"About"</code> button (JavaScript-enabled).</li>
-            <li>Features a <strong>continuous moving pattern</strong> on a white background (JavaScript-powered).</li>
+            <li>A warm welcome message inviting visitors to explore the portfolio.</li>
+            <li>Clickable "About" button (JavaScript-enabled).</li>
+            <li>Continuous moving pattern on a white background (JavaScript-powered).</li>
         </ul>
-        <p><span class="status">Status: Completed</span></p>
         <h3>2. About Me</h3>
         <ul>
             <li>Displays my photo and a brief introduction about me and my passion for technology.</li>
         </ul>
-        <p><span class="status">Status: Completed</span></p>
         <h3>3. Skills</h3>
         <ul>
-            <li>Buttons representing different skills: <code>C</code>, <code>Java</code>, <code>VS Code</code>, and more.</li>
+            <li>Buttons representing different skills: C, Java, VS Code, JavaScript, React, Node.js, and more.</li>
             <li>Highlights my technical competencies.</li>
         </ul>
-        <p><span class="status">Status: Completed</span></p>
-        <h3>4. Projects <span class="Completed"></span></h3>
+        <h3>4. Projects</h3>
         <ul>
-            <li>Create <strong>responsive image containers</strong> listing projects.</li>
-            <li>Implement <strong>transition effects</strong> on hover to display project descriptions (JavaScript).</li>
-            <li>Add clickable buttons for:
+            <li>Responsive image containers listing projects.</li>
+            <li>Transition effects on hover to display project descriptions (JavaScript).</li>
+            <li>Clickable buttons for:
                 <ul>
-                    <li>GitHub repository</li>
-                    <li>Hosted project</li>
+                    <li>GitHub Repository</li>
+                    <li>Live Hosted Project</li>
                 </ul>
             </li>
-            <li>Apply CSS for a visually appealing layout with a white background.</li>
+            <li>Visually appealing layout with a white background.</li>
         </ul>
-        <p><span class="pending">Status: Completed</span></p>
-    .
         <h3>5. Experience</h3>
         <ul>
             <li>A section showcasing my professional experiences and roles.</li>
         </ul>
-        <p><span class="status">Status: Completed</span></p>
         <h3>6. Education</h3>
         <ul>
             <li>Details about my educational background, including my Bachelor's degree.</li>
         </ul>
-        <p><span class="status">Status: Completed</span></p>
-        <h3>7. Awards & Achievements <span class="Completed"></span></h3>
+        <h3>7. Articles</h3>
         <ul>
-            <li>Create <strong>rectangular containers</strong> for images and descriptions placed side by side.</li>
-            <li>Implement <strong>transition effects</strong> on hover to reveal award descriptions (JavaScript).</li>
-            <li>Apply CSS styling with a <strong>dark background</strong> for an elegant appearance.</li>
+            <li>Section to display technical articles I have written.</li>
+            <li>Articles cover Web Development, AI, Data Structures, and Coding Practices.</li>
+            <li>Integration with Markdown/Database to store articles dynamically.</li>
         </ul>
-        <p><span class="pending">Status: Completed</span></p>
-    .
-        <h3>8. Contact</h3>
+        <h3>8. Awards & Achievements</h3>
+        <ul>
+            <li>Rectangular containers for images and descriptions placed side by side.</li>
+            <li>Transition effects on hover to reveal award descriptions (JavaScript).</li>
+            <li>Dark background for an elegant appearance.</li>
+        </ul>
+        <h3>9. Contact</h3>
         <ul>
             <li>A fully functional contact form to send messages or feedback.</li>
+            <li>Integrated with EmailJS for direct communication.</li>
         </ul>
-        <p><span class="status">Status: Completed</span></p>
-        <h3>9. Footer</h3>
+        <h3>10. Footer</h3>
         <ul>
-            <li>A <strong>"Thank You"</strong> message.</li>
+            <li>"Thank You" message.</li>
             <li>Quick links, contact info, and social media links.</li>
-            <li>Copyright notice: <code>© 2024 Saurabh's Portfolio. All rights reserved.</code></li>
+            <li>Copyright notice: © 2024 Saurabh's Portfolio. All rights reserved.</li>
         </ul>
-        <p><span class="status">Status: Completed</span></p>
-    </section>
-    <section>
-        <h2>🛠️ Tech Stack</h2>
+
+        
+ ---
+ <h2>🛠️ Tech Stack</h2>
         <ul>
             <li><strong>HTML</strong>: For structuring the website.</li>
             <li><strong>CSS</strong>: For styling and responsiveness.</li>
             <li><strong>JavaScript</strong>: For interactive features and animations.</li>
+            <li><strong>Node.js & Express</strong>: (for future backend integration).</li>
+            <li><strong>MongoDB</strong>: (for storing articles dynamically).</li>
         </ul>
-    </section>
-    <section>
-        <h2>📥 How to Contribute</h2>
-        <ol>
-            <li><strong>Fork</strong> the repository.</li>
-            <li>Create a new branch: <code>git checkout -b feature/your-feature-name</code>.</li>
-            <li>Make the necessary changes.</li>
-            <li>Commit your changes: <code>git commit -m "Add your message"</code>.</li>
-            <li>Push the branch: <code>git push origin feature/your-feature-name</code>.</li>
-            <li>Open a <strong>Pull Request</strong>.</li>
-        </ol>
-    </section>
-    <footer>
-        <p>For questions or collaboration inquiries, feel free to reach out via the <strong>Contact</strong> section on the portfolio or submit an issue on GitHub.</p>
-        <p>Let's build something amazing together! 🚀</p>
-    </footer>
-</body>
+        <h2>🎯 Live Project</h2>
+        <p>🔗 <strong>Live URL</strong>: <a href="https://www.gu-saurabh.tech/">Saurabh's Portfolio</a></p>
+        
+## 🎨 **Screenshots**
+| Desktop View | Mobile View |
+|-------------|------------|
+| ![Desktop Screenshot](assets/images/screenshot/1.png) | ![Mobile Screenshot](assets/images/screenshot/11.png) |
+|About Section|
+| ![Desktop Screenshot](assets/images/screenshot/2.png) | ![Mobile Screenshot](assets/images/screenshot/12.png) |
+|Skills Section|
+| ![Desktop Screenshot](assets/images/screenshot/3.png) | ![Mobile Screenshot](assets/images/screenshot/13.png) |
+|Prpjects Section|
+| ![Desktop Screenshot](assets/images/screenshot/4.png) | ![Mobile Screenshot](assets/images/screenshot/14.png) |
+|Skills Section|
+| ![Desktop Screenshot](assets/images/screenshot/5.png) | ![Mobile Screenshot](assets/images/screenshot/15.png) |
+|Experience Section|
+| ![Desktop Screenshot](assets/images/screenshot/6.png) | ![Mobile Screenshot](assets/images/screenshot/16.png) |
+|Education Section|
+| ![Desktop Screenshot](assets/images/screenshot/7.png) | ![Mobile Screenshot](assets/images/screenshot/17.png) |
+|Articles & Blog Section|
+| ![Desktop Screenshot](assets/images/screenshot/8.png) | ![Mobile Screenshot](assets/images/screenshot/18.png) |
+|Awards & Achievements Section|
+| ![Desktop Screenshot](assets/images/screenshot/9.png) | ![Mobile Screenshot](assets/images/screenshot/19.png) |
+|Contact Form|
+| ![Desktop Screenshot](assets/images/screenshot/10.png) | ![Mobile Screenshot](assets/images/screenshot/20.png) |
 
+---
+ <h2>📥 How to Contribute</h2>
+        <ol>
+            <li>Fork the repository.</li>
+            <li>Create a new branch:
+                <pre><code>git checkout -b feature/your-feature-name</code></pre>
+            </li>
+            <li>Make the necessary changes.</li>
+            <li>Commit your changes:
+                <pre><code>git commit -m "Add your message"</code></pre>
+            </li>
+            <li>Push the branch:
+                <pre><code>git push origin feature/your-feature-name</code></pre>
+            </li>
+            <li>Open a Pull Request.</li>
+        </ol>
+        <h2>📧 Contact</h2>
+        <p>For questions or collaboration inquiries, feel free to reach out via the Contact section on the portfolio or submit an issue on GitHub.</p>
+        <h2>🚀 Let's build something amazing together!</h2>
+    </div>
+</body>
 </html>

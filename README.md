@@ -88,17 +88,17 @@
 | ![Desktop Screenshot](assets/images/screenshot/3.png) | ![Mobile Screenshot](assets/images/screenshot/13.png) |
 |Prpjects Section|
 | ![Desktop Screenshot](assets/images/screenshot/4.png) | ![Mobile Screenshot](assets/images/screenshot/14.png) |
-|Skills Section|
-| ![Desktop Screenshot](assets/images/screenshot/5.png) | ![Mobile Screenshot](assets/images/screenshot/15.png) |
 |Experience Section|
-| ![Desktop Screenshot](assets/images/screenshot/6.png) | ![Mobile Screenshot](assets/images/screenshot/16.png) |
+| ![Desktop Screenshot](assets/images/screenshot/5.png) | ![Mobile Screenshot](assets/images/screenshot/15.png) |
 |Education Section|
-| ![Desktop Screenshot](assets/images/screenshot/7.png) | ![Mobile Screenshot](assets/images/screenshot/17.png) |
+| ![Desktop Screenshot](assets/images/screenshot/6.png) | ![Mobile Screenshot](assets/images/screenshot/16.png) |
 |Articles & Blog Section|
+| ![Desktop Screenshot](assets/images/screenshot/7.png) | ![Mobile Screenshot](assets/images/screenshot/17.png) |
+|Awards & Achievement Section|
 | ![Desktop Screenshot](assets/images/screenshot/8.png) | ![Mobile Screenshot](assets/images/screenshot/18.png) |
-|Awards & Achievements Section|
-| ![Desktop Screenshot](assets/images/screenshot/9.png) | ![Mobile Screenshot](assets/images/screenshot/19.png) |
 |Contact Form|
+| ![Desktop Screenshot](assets/images/screenshot/9.png) | ![Mobile Screenshot](assets/images/screenshot/19.png) |
+|Footer Section|
 | ![Desktop Screenshot](assets/images/screenshot/10.png) | ![Mobile Screenshot](assets/images/screenshot/20.png) |
 
 ---

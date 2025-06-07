@@ -1,0 +1,288 @@
+.projects-section {
+    max-width: 1500px;
+    margin: 2rem auto; /* Adjusted margin */
+    padding-top: 0; /* Remove top padding as heading is outside */
+}
+
+
+/* General heading style for the page, similar to other sections */
+h2.title.section-heading {
+    font-size: 3.5rem;
+    color: rgb(32, 32, 32);
+    font-weight: 800;
+    text-align: center;
+    margin-top: 8rem; /* Space below navbar */
+    margin-bottom: 2rem; /* Space above project cards */
+}
+
+h2.title.section-heading span {
+    color: rgb(115, 3, 167);
+}
+
+body {
+    background-color: #e5ecfb; /* Added page background color */
+}
+
+.dark-mode h2.title.section-heading {
+  color: #ffffff;
+}
+
+.dark-mode h2.title.section-heading span {
+  color: #F07900;
+}
+
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between project items */
+    justify-content: center;
+}
+
+.project-item {
+    background-color: #f9fbff;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: calc(33.333% - 40px); /* Adjust for 3 items per row, considering gap */
+    min-width: 280px; /* Minimum width for smaller screens / responsiveness */
+    margin-bottom: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes buttons to the bottom */
+}
+
+.project-item:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Slightly larger shadow on hover */
+    transform: translateY(-2px); /* Subtle lift effect on hover */
+    transition: box-shadow 0.2s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+}
+    
+.project-image-wrapper {
+    position: relative;
+    margin-bottom: 15px; /* Space between image area and title */
+}
+
+.project-item img {
+    width: 100%;
+    height: 175px;
+    border-radius: 4px;
+    display: block; /* Ensures the wrapper correctly sizes to the image */
+}
+
+.project-item h3 {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 5px; /* Adjusted margin to make space for date */
+
+    color: #000f62;
+}
+
+.project-date {
+    font-size: 1.2rem; /* Smaller font size for the date */
+    color: #555555; /* Greyish color for the date */
+    margin-bottom: 10px; /* Space below the date and above description */
+    font-style: italic; /* Optional: italicize the date */
+}
+
+.project-item p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    flex-grow: 1; /* Allows description to take available space */
+    margin-bottom: 15px;
+    /* text-transform: none; */ /* Ensure project description is not capitalized - This was commented out or removed, ensure it's as intended or restore if needed */
+    text-transform: none; /* Explicitly ensuring project description is not capitalized */
+}
+
+.tech-stack {
+    position: absolute;
+    bottom: 8px; /* Adjust as needed for spacing from image bottom */
+    right: 8px; /* Adjust as needed for spacing from image right */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px; /* Smaller gap for icons on image */
+    /* margin-bottom: 15px; */ /* Removed as it's absolutely positioned */
+    justify-content: flex-end; 
+    background-color: rgba(255, 255, 255, 0.788); /* Optional: slight background for better visibility */
+    padding: 5px 10px; /* Optional: padding around icons */
+    border-radius: 50px; /* Optional: rounded corners for the background */
+}
+
+.tech-stack i {
+    font-size: 1.6rem; /* Adjusted icon size */
+    color: #000000; /* White icons for better contrast on images/dark overlay */
+    text-shadow: #ffffff 2px 2px 5px;
+    transition: color 0.2s ease;
+}
+
+.tech-stack:hover {
+    background-color: #ffffff; /* Lighter grey on hover */
+}
+
+.project-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: auto; /* Pushes the button group to the bottom */
+}
+
+.more-btn {
+    background-color: #002368ea; /* Dark greyish-blue, similar to image */
+    color: white;
+    border: none;
+    padding: 6px 8px; /* Adjusted padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex; /* Use inline-flex for icon and text alignment */
+    align-items: center; /* Vertically align icon and text */
+    justify-content: center; /* Center content if button grows */
+    font-size: 1.5rem; /* Adjusted font size */
+    font-weight: 500; /* Slightly bolder text */
+    border-radius: 6px; /* Rounded corners like image */
+    cursor: pointer;
+    flex-grow: 1; 
+    transition: background-color 0.2s ease;
+}
+
+.more-btn i {
+    margin-right: 7px; /* Space between icon and text */
+    font-size: 1.5rem; /* Icon size, matching button text */
+}
+
+.more-btn:hover {
+    background-color: #0128d5; /* Lighter shade on hover */
+}
+
+.more-btn:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(0, 31, 167, 0.586); /* Custom focus ring */
+}
+
+/* Back button styles */
+.back-btn {
+    display: block; /* To allow margin auto centering */
+    width: fit-content; /* Adjust width to content */
+    margin: 2rem auto; /* Center button and add some margin */
+    padding: 10px 20px;
+    background-color: #002368ea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none; /* Remove underline from button itself if it's not an anchor */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.back-btn a {
+    color: white; /* Ensure text color is white */
+    text-decoration: none; /* Remove underline from anchor text */
+    display: inline-flex; /* Align icon and text */
+    align-items: center;
+}
+
+.back-btn i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.back-btn:hover {
+    background-color: #0128d5;
+}
+
+.back-btn:focus,
+.back-btn a:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(0, 31, 167, 0.586); /* Custom focus ring */
+}
+
+
+/* Dark mode styles for project items */
+.dark-mode .project-item {
+    background-color: #262626; /* Darker background for project cards */
+    border: 1px solid #444;
+    box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+}
+
+.dark-mode .project-item h3 {
+    color: #f0f0f0; /* Lighter text for heading */
+}
+
+.dark-mode .project-date {
+    color: #aaaaaa; /* Lighter grey for date in dark mode */
+}
+
+.dark-mode .project-item p {
+    color: #ccc; /* Lighter text for description */
+}
+
+.dark-mode .tech-stack {
+    background-color: rgba(0, 0, 0, 0.736); /* Darker background for tech stack */
+}
+
+.dark-mode .tech-stack:hover {
+    background-color: rgb(0, 0, 0); /* Darker background for tech stack */
+}
+
+.dark-mode .tech-stack i {
+    color: #ffffff; /* Icon color in dark mode - already light, should be fine */
+    text-shadow: #000000 0px 2px 5px;
+}
+
+.dark-mode .more-btn {
+    background-color: #333A45; /* Same as light mode, or adjust if needed for dark theme */
+    color: #ffffff;
+}
+
+.dark-mode .more-btn:hover {
+    background-color: #4A5461; /* Lighter shade on hover */
+}
+
+.dark-mode .more-btn i {
+    color: #ffffff; /* Ensure icon color matches text in dark mode */
+}
+
+/* Dark mode for back button */
+.dark-mode .back-btn {
+    background-color: #333A45;
+    color: #ffffff;
+}
+
+.dark-mode .back-btn a {
+    color: #ffffff;
+}
+
+.dark-mode .back-btn:hover {
+    background-color: #4A5461;
+}
+
+.dark-mode .back-btn i {
+    color: #ffffff;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .project-item {
+        width: calc(50% - 30px); /* 2 items per row */
+    }
+    h2.title.section-heading {
+        font-size: 3rem;
+    }
+    .project-item img {
+        height: 160px; /* Adjust image height for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-item {
+        width: calc(100% - 20px); /* 1 item per row */
+    }
+    h2.title.section-heading {
+        font-size: 2.5rem;
+    }
+    .project-item img {
+        height: 150px; /* Adjust image height for smaller screens */
+    }
+}

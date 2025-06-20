@@ -54,8 +54,10 @@ window.addEventListener('scroll', () => {
 
 // EmailJS to send contact form data
   // Initialize EmailJS with your public key
-emailjs.init('DRXOHWryOTpy9TUps'); // Replace with your Public Key
+ // Initialize EmailJS
+  emailjs.init('DRXOHWryOTpy9TUps'); // Your Public Key
 
+  // Form submission handling
   document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -63,31 +65,46 @@ emailjs.init('DRXOHWryOTpy9TUps'); // Replace with your Public Key
     const submitBtn = document.getElementById('submit-btn');
     const loader = document.getElementById('loader');
 
+    // Disable the button and show loader
     submitBtn.disabled = true;
     loader.style.display = 'inline-block';
 
+    // Send email via EmailJS
     emailjs.sendForm('service_kl8aq6v', 'template_75a60sl', form)
-      .then(() => {
+      .then((response) => {
+        // ✅ Success response
+        console.log('SUCCESS!', response.status, response.text);
         form.reset();
         showModal();
       })
       .catch((error) => {
-        console.error('EmailJS Error:', error);
+        // ❌ Error response
+        console.error('FAILED...', error);
         alert('❌ Failed to send message. Please try again later.');
       })
       .finally(() => {
+        // Always re-enable the button and hide loader
         submitBtn.disabled = false;
         loader.style.display = 'none';
       });
   });
 
-  // Show success modal and auto-close after 2 seconds
+  // Show success modal and auto-close
   function showModal() {
-    document.getElementById('success-modal').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
+    const modal = document.getElementById('success-modal');
+    const overlay = document.getElementById('overlay');
+
+    modal.style.display = 'block';
+    overlay.style.display = 'block';
 
     // Auto-close after 1.5 seconds
     setTimeout(closeModal, 1500);
+  }
+
+  // Hide modal
+  function closeModal() {
+    document.getElementById('success-modal').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
   }
 
 });

@@ -53,11 +53,43 @@ window.addEventListener('scroll', () => {
     
 
 // EmailJS to send contact form data
-$("#contact-form").submit(function (event) {
-    event.preventDefault(); // Prevent the default form submission
-//  submit the form to Formspree as a fallback
-$("#contact-form").off("submit").submit();
-});
+  // Initialize EmailJS with your public key
+emailjs.init('DRXOHWryOTpy9TUps'); // Replace with your Public Key
+
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const form = this;
+    const submitBtn = document.getElementById('submit-btn');
+    const loader = document.getElementById('loader');
+
+    submitBtn.disabled = true;
+    loader.style.display = 'inline-block';
+
+    emailjs.sendForm('service_kl8aq6v', 'template_75a60sl', form)
+      .then(() => {
+        form.reset();
+        showModal();
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        alert('❌ Failed to send message. Please try again later.');
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        loader.style.display = 'none';
+      });
+  });
+
+  // Show success modal and auto-close after 2 seconds
+  function showModal() {
+    document.getElementById('success-modal').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+
+    // Auto-close after 1.5 seconds
+    setTimeout(closeModal, 1500);
+  }
+
 });
     // <!-- emailjs to mail contact form data -->
 

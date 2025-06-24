@@ -1,38 +1,38 @@
 $(document).ready(function () {
 
-    $('#menu').click(function () {
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+  $('#menu').click(function () {
+    $(this).toggleClass('fa-times');
+    $('.navbar').toggleClass('nav-toggle');
+  });
+
+  $(window).on('scroll load', function () {
+    $('#menu').removeClass('fa-times');
+    $('.navbar').removeClass('nav-toggle');
+
+    if (window.scrollY > 60) {
+      document.querySelector('#scroll-top').classList.add('active');
+    } else {
+      document.querySelector('#scroll-top').classList.remove('active');
+    }
+
+    // scroll spy
+    $('section').each(function () {
+      let height = $(this).height();
+      let offset = $(this).offset().top - 200;
+      let top = $(window).scrollTop();
+      let id = $(this).attr('id');
+
+      if (top > offset && top < offset + height) {
+        $('.navbar ul li a').removeClass('active');
+        $('.navbar').find(`[href="#${id}"]`).addClass('active');
+      }
     });
+  });
 
-    $(window).on('scroll load', function () {
-        $('#menu').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+  // Select the progress bar fill element
+  const progressBar = document.querySelector('.filled');
 
-        if (window.scrollY > 60) {
-            document.querySelector('#scroll-top').classList.add('active');
-        } else {
-            document.querySelector('#scroll-top').classList.remove('active');
-        }
-
-        // scroll spy
-        $('section').each(function () {
-            let height = $(this).height();
-            let offset = $(this).offset().top - 200;
-            let top = $(window).scrollTop();
-            let id = $(this).attr('id');
-
-            if (top > offset && top < offset + height) {
-                $('.navbar ul li a').removeClass('active');
-                $('.navbar').find(`[href="#${id}"]`).addClass('active');
-            }
-        });
-    });
-
-// Select the progress bar fill element
-const progressBar = document.querySelector('.filled');
-
-window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', () => {
     // Calculate the scroll progress
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -40,50 +40,81 @@ window.addEventListener('scroll', () => {
 
     // Update the width of the progress bar
     progressBar.style.width = scrollPercentage + '%';
-});
+  });
 
 
-    // smooth scrolling
-    $('a[href*="#"]').on('click', function (e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
-    });
-    
+  // smooth scrolling
+  $('a[href*="#"]').on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+      scrollTop: $($(this).attr('href')).offset().top,
+    }, 500, 'linear')
+  });
 
-// EmailJS to send contact form data
+
+  // EmailJS to send contact form data
+  // Function to get client details ip & location
+
+  // Capture page load time
+  const pageLoadTime = Date.now();
+
+  async function getClientDetails() {
+    const ipData = await fetch('https://ipinfo.io/json?token=8b7ca0f55ee09b')
+      .then(res => res.json())
+      .catch(() => ({}));
+
+    return {
+      ip: ipData.ip || 'Unavailable',
+      location: `${ipData.city || ''}, ${ipData.region || ''}, ${ipData.country || ''}`,
+      hostname: ipData.hostname || 'Unavailable',
+      org: ipData.org || 'Unavailable',
+      time: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+      device: navigator.userAgent,
+      referrer: document.referrer || 'Direct',
+      time_spent: Math.floor((Date.now() - pageLoadTime) / 1000) + ' seconds'
+    };
+  }
+
   // Initialize EmailJS with your public key
- // Initialize EmailJS
+  // Initialize EmailJS
   emailjs.init('DRXOHWryOTpy9TUps'); // Your Public Key
 
   // Form submission handling
-  document.getElementById('contact-form').addEventListener('submit', function (e) {
+  document.getElementById('contact-form').addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const form = this;
     const submitBtn = document.getElementById('submit-btn');
     const loader = document.getElementById('loader');
 
-    // Disable the button and show loader
     submitBtn.disabled = true;
     loader.style.display = 'inline-block';
 
-    // Send email via EmailJS
+    // Get all extended client details
+    const details = await getClientDetails();
+
+    // Populate hidden fields
+    document.getElementById('ip').value = details.ip;
+    document.getElementById('location').value = details.location;
+    document.getElementById('hostname').value = details.hostname;
+    document.getElementById('org').value = details.org;
+    document.getElementById('device').value = details.device;
+    document.getElementById('time').value = details.time;
+    document.getElementById('referrer').value = details.referrer;
+    document.getElementById('time_spent').value = details.time_spent;
+
+    // Proceed with EmailJS
     emailjs.sendForm('service_kl8aq6v', 'template_75a60sl', form)
       .then((response) => {
-        // ✅ Success response
         console.log('SUCCESS!', response.status, response.text);
         form.reset();
         showModal();
       })
       .catch((error) => {
-        // ❌ Error response
         console.error('FAILED...', error);
         alert('❌ Failed to send message. Please try again later.');
       })
       .finally(() => {
-        // Always re-enable the button and hide loader
         submitBtn.disabled = false;
         loader.style.display = 'none';
       });
@@ -108,59 +139,59 @@ window.addEventListener('scroll', () => {
   }
 
 });
-    // <!-- emailjs to mail contact form data -->
+// <!-- emailjs to mail contact form data -->
 
 
 document.addEventListener('visibilitychange',
-    function () {
-        if (document.visibilityState === "visible") {
-            document.title = "Portfolio | Saurabh Kumar";
-            $("#favicon").attr("href", "assets/images/favicon.png");
-        }
-        else {
-            document.title = "Come Back To Portfolio";
-            $("#favicon").attr("href", "assets/images/favicon.png");
-        }
-    });
+  function () {
+    if (document.visibilityState === "visible") {
+      document.title = "Portfolio | Saurabh Kumar";
+      $("#favicon").attr("href", "assets/images/favicon.png");
+    }
+    else {
+      document.title = "Come Back To Portfolio";
+      $("#favicon").attr("href", "assets/images/favicon.png");
+    }
+  });
 
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["frontend development", "backend development", "web designing", "Data Analyst", "web development"],
-    loop: true,
-    typeSpeed: 50,
-    backSpeed: 25,
-    backDelay: 500,
+  strings: ["frontend development", "backend development", "web designing", "Data Analyst", "web development"],
+  loop: true,
+  typeSpeed: 50,
+  backSpeed: 25,
+  backDelay: 500,
 });
 // <!-- typed js effect ends -->
 
 async function fetchData(type = "skills") {
-    let response
-    type === "skills" ?
-        response = await fetch("skills.json")
-        :
-        response = await fetch("./projects/projects.json")
-    const data = await response.json();
-    return data;
+  let response
+  type === "skills" ?
+    response = await fetch("skills.json")
+    :
+    response = await fetch("./projects/projects.json")
+  const data = await response.json();
+  return data;
 }
 
 function showSkills(skills) {
-    let skillsContainer = document.getElementById("skillsContainer");
-    let skillHTML = "";
-    skills.forEach(skill => {
-        skillHTML += `
+  let skillsContainer = document.getElementById("skillsContainer");
+  let skillHTML = "";
+  skills.forEach(skill => {
+    skillHTML += `
         <div class="bar">
               <div class="info">
                 <img src=${skill.icon} alt="skill" />
                 <span>${skill.name}</span>
               </div>
             </div>`
-    });
-    skillsContainer.innerHTML = skillHTML;
+  });
+  skillsContainer.innerHTML = skillHTML;
 }
 //<!--skills call-->
 fetchData().then(data => {
-    showSkills(data);
+  showSkills(data);
 });
 
 // <!--projects call-->
@@ -170,31 +201,31 @@ document.addEventListener("DOMContentLoaded", function () {
   let hoverCount = getHoverCount();
 
   function getHoverCount() {
-      if (window.innerWidth <= 600) {
-          return 1;
-      } else if (window.innerWidth <= 900) {
-          return 2;
-      } else {
-          return 3;
-      }
+    if (window.innerWidth <= 600) {
+      return 1;
+    } else if (window.innerWidth <= 900) {
+      return 2;
+    } else {
+      return 3;
+    }
   }
 
   function applyAutoHover() {
-      projectCards.forEach((card) => card.classList.remove("hover")); // Remove hover effect from all
+    projectCards.forEach((card) => card.classList.remove("hover")); // Remove hover effect from all
 
-      for (let i = 0; i < hoverCount; i++) {
-          let hoverIndex = (index + i) % projectCards.length;
-          projectCards[hoverIndex].classList.add("hover"); // Apply hover effect to selected cards
-      }
+    for (let i = 0; i < hoverCount; i++) {
+      let hoverIndex = (index + i) % projectCards.length;
+      projectCards[hoverIndex].classList.add("hover"); // Apply hover effect to selected cards
+    }
 
-      index = (index + hoverCount) % projectCards.length; // Move index forward
+    index = (index + hoverCount) % projectCards.length; // Move index forward
   }
 
   setInterval(applyAutoHover, 2000); // Auto-hover effect every 2 seconds
 
   // Adjust hover count on window resize
   window.addEventListener("resize", function () {
-      hoverCount = getHoverCount();
+    hoverCount = getHoverCount();
   });
 });
 
@@ -222,20 +253,20 @@ function moveArticleSlide(index) {
 // Update active dot
 function updateArticleDots() {
   articleDots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === articleCurrentIndex);
+    dot.classList.toggle("active", i === articleCurrentIndex);
   });
 }
 
 // Arrow button navigation
 articlePrevBtn.addEventListener("click", () => {
   if (articleCurrentIndex > 0) {
-      moveArticleSlide(articleCurrentIndex - 1);
+    moveArticleSlide(articleCurrentIndex - 1);
   }
 });
 
 articleNextBtn.addEventListener("click", () => {
   if (articleCurrentIndex < articleDots.length - 1) {
-      moveArticleSlide(articleCurrentIndex + 1);
+    moveArticleSlide(articleCurrentIndex + 1);
   }
 });
 
@@ -259,7 +290,7 @@ articleContainer.addEventListener("mousemove", (e) => {
 // Click event for dots
 articleDots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
-      moveArticleSlide(index);
+    moveArticleSlide(index);
   });
 });
 
@@ -267,8 +298,8 @@ articleDots.forEach((dot, index) => {
 articleContainer.addEventListener("scroll", () => {
   let newIndex = Math.round(articleContainer.scrollLeft / articleWidth);
   if (newIndex !== articleCurrentIndex) {
-      articleCurrentIndex = newIndex;
-      updateArticleDots();
+    articleCurrentIndex = newIndex;
+    updateArticleDots();
   }
 });
 
@@ -359,7 +390,7 @@ VanillaTilt.init(document.querySelectorAll(".tilt"), {
   max: 15,
 });
 // <!-- tilt js effect ends -->
-  
+
 // <!-- particles.js starts -->
 // Function to set Particle.js color based on theme
 function setParticleColor() {
@@ -367,35 +398,35 @@ function setParticleColor() {
   const particleColor = isDarkMode ? "#FFD700" : "#000000"; // Gold for dark mode, black for light mode
 
   particlesJS("particles-js", {
-      "particles": {
-          "number": {
-              "value": 80,
-              "density": { "enable": true, "value_area": 800 }
-          },
-          "color": { "value": particleColor },
-          "shape": {
-              "type": "star",
-              "stroke": { "width": 0, "color": particleColor }
-          },
-          "opacity": { "value": 0.75 },
-          "size": { "value": 5, "random": true },
-          "line_linked": {
-              "enable": true,
-              "distance": 150,
-              "color": particleColor,
-              "opacity": 0.4,
-              "width": 1
-          },
-          "move": { "enable": true, "speed": 6 }
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": { "enable": true, "value_area": 800 }
       },
-      "interactivity": {
-          "detect_on": "canvas",
-          "events": {
-              "onhover": { "enable": true, "mode": "repulse" },
-              "onclick": { "enable": true, "mode": "push" }
-          }
+      "color": { "value": particleColor },
+      "shape": {
+        "type": "star",
+        "stroke": { "width": 0, "color": particleColor }
       },
-      "retina_detect": true
+      "opacity": { "value": 0.75 },
+      "size": { "value": 5, "random": true },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": particleColor,
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": { "enable": true, "speed": 6 }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" },
+        "onclick": { "enable": true, "mode": "push" }
+      }
+    },
+    "retina_detect": true
   });
 }
 
@@ -418,11 +449,11 @@ themeToggle.addEventListener("click", () => {
 
   // Change icon and save preference
   if (body.classList.contains("dark-mode")) {
-      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      localStorage.setItem("theme", "dark");
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    localStorage.setItem("theme", "dark");
   } else {
-      themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-      localStorage.setItem("theme", "light");
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    localStorage.setItem("theme", "light");
   }
 
   // Delay to apply particle color change smoothly
@@ -432,13 +463,13 @@ themeToggle.addEventListener("click", () => {
 // Detect System Dark Mode Change
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
   if (event.matches) {
-      body.classList.add("dark-mode");
-      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      localStorage.setItem("theme", "dark");
+    body.classList.add("dark-mode");
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    localStorage.setItem("theme", "dark");
   } else {
-      body.classList.remove("dark-mode");
-      themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-      localStorage.setItem("theme", "light");
+    body.classList.remove("dark-mode");
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    localStorage.setItem("theme", "light");
   }
   setParticleColor();
 });
@@ -465,31 +496,31 @@ window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", set
 
 // disable developer mode
 document.onkeydown = function (e) {
-    if (e.keyCode == 123) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-        return false;
-    }
+  if (e.keyCode == 123) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    return false;
+  }
 }
 
 
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
 const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: true
+  origin: 'top',
+  distance: '80px',
+  duration: 1000,
+  reset: true
 });
 
 /* SCROLL HOME */

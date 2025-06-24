@@ -106,7 +106,15 @@ $(document).ready(function () {
     // Proceed with EmailJS
     emailjs.sendForm('service_kl8aq6v', 'template_75a60sl', form)
       .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
+        console.log('Main message sent to owner:', response.status, response.text);
+
+        // Send auto-reply to sender
+        return emailjs.sendForm('service_kl8aq6v', 'template_reply', form);
+      })
+      .then((autoReplyResponse) => {
+        console.log('Auto-reply sent to user:', autoReplyResponse.status, autoReplyResponse.text);
+
+        // Reset the form and show success modal
         form.reset();
         showModal();
       })

@@ -81,7 +81,7 @@
 ## 🎨 **Screenshots**
 | Desktop View | Mobile View |
 |-------------|------------|
-| ![Desktop Screenshot](assets/images/screenshot/1.png) | ![Mobile Screenshot](assets/images/screenshot/11.png) |
+| ![Desktop Screenshot](assets/images/screenshot/1.jpeg) | ![Mobile Screenshot](assets/images/screenshot/11.png) |
 |About Section|
 | ![Desktop Screenshot](assets/images/screenshot/2.png) | ![Mobile Screenshot](assets/images/screenshot/12.png) |
 |Skills Section|

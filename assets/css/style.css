@@ -184,7 +184,8 @@ header .navbar ul li a:hover {
     overflow-y: auto; /* Enables scrolling if needed */
     text-align: left;
     align-items: flex-start;
-    background-color: #0e0f31;
+    background-color: #fffffff6;
+    box-shadow: -2px 0 10px rgba(19, 19, 19, 0.1);
   }
   
   header .navbar ul {
@@ -197,18 +198,19 @@ header .navbar ul li a:hover {
     margin: 1rem 0;
     border-radius: 0.5rem;
     width: 26rem;
+    background: #00000036;
   }
   header .navbar ul li a {
     display: block;
     padding: 1rem;
     text-align: left;
-    color: #fff;
+    color: #000000;
     font-size: 2rem;
   }
   header .navbar ul li a.active,
   header .navbar ul li a:hover {
     padding: 1rem;
-    color: #fff;
+    color: #000000;
     border-radius: 0.5rem;
     border-bottom: 0.5rem solid #011aff;
   }
@@ -234,7 +236,7 @@ header .navbar ul li a:hover {
 @media (max-width: 768px) {
   .theme-btn {
     font-size: 4rem;
-    color: #ffffff;
+    color: #000000;
     align-items: top;
   }
 }
@@ -282,14 +284,14 @@ header .navbar ul li a:hover {
     color: rgb(255, 255, 255); /* White for visibility */
   }
   .dark-mode header .navbar {
-    background-color: #121212; /* True dark mode */
-    box-shadow: -2px 0 10px rgba(255, 255, 255, 0.1);
+    background-color: #000000f6; /* True dark mode */
+    box-shadow: -2px 0 10px rgba(243, 243, 243, 0.1);
   }
   .dark-mode header .navbar ul li {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.104);
   }
   .dark-mode header .navbar ul li:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.115);
   }
 
   .dark-mode header .navbar ul li a {
